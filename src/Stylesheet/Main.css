@@ -1,0 +1,211 @@
+/* Hotels Container and Sections Styling */
+.hotels-container {
+  font-family: Arial, sans-serif;
+  color: #4a4a4a;
+  margin-top: 7rem;
+}
+
+.intro-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.intro-section h1 {
+  font-size: 2.5rem;
+  color: #4caf50;
+}
+
+.intro-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+
+.intro-section .new {
+  font-size: 1.9rem;
+  line-height: 1.8;
+  margin-top: 5rem;
+  color: #4caf50;
+}
+
+.discover-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f8f4;
+}
+
+.discover {
+  justify-content: space-around;
+}
+
+.discover-section h2 {
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+
+.hotels-gallery {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem; /* Prevent scrollbar from covering images */
+}
+
+.hotel-card {
+  min-width: 200px; /* Consistent width for cards */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-card img {
+  width: 100%;
+  height: auto;
+}
+
+.navigation-arrows {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.arrow {
+  background-color: #d1e0d1;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.arrow:hover {
+  background-color: #2980b9;
+  color: white;
+}
+
+.location-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.location-section h2 {
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+
+.location-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+.scenic-collection{
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+.scenic-collection h2{
+  font-size: 2rem;
+  color: #4caf50;
+  margin-bottom: 1rem;
+}
+.scenic-collection p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+.scenic-collection button{
+  padding: 20px 10px;
+  color: #4caf50;
+  background-color: aliceblue;
+  border: #4caf50;
+  box-shadow: 5px 2px;
+}
+.scenic-collection button:hover{
+  background-color:#4caf50;
+  color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Move .hotels-container below the search bar */
+  .hotels-container {
+    margin-top: 2rem; /* Reduced margin for smaller screens */
+    padding: 1rem;
+  }
+
+  .intro-section {
+    padding: 2rem 1rem;
+  }
+
+  .intro-section h1 {
+    font-size: 2rem;
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+
+  .intro-section .new {
+    font-size: 1.5rem;
+  }
+
+  .discover-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .discover-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .hotels-gallery {
+    gap: 0.5rem;
+  }
+
+  .hotel-card {
+    min-width: 150px;
+  }
+
+  .location-section {
+    padding: 2rem 1rem;
+  }
+
+  .location-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .location-section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotels-container {
+    margin-top: 1rem;
+  }
+
+  .intro-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro-section p,
+  .intro-section .new,
+  .discover-section h2,
+  .location-section h2 {
+    font-size: 1rem;
+  }
+
+  .hotel-card {
+    min-width: 120px;
+  }
+
+  .arrow {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+}

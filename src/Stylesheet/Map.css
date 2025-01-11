@@ -1,0 +1,8 @@
+/* Import Leaflet's default styles */
+@import "leaflet/dist/leaflet.css";
+
+/* Optional: Add custom styling */
+.leaflet-container {
+  height: 400px; /* Set the map height */
+  width: 100%;   /* Make the map full width */
+}
