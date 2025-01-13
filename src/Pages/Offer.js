@@ -85,6 +85,16 @@ const Offer = () => {
         </div>
     </div>
       <SearchBar />
+      <section className='location-section1'>
+        <h2>Auckland Airport Hotel Deals</h2>
+        <img 
+        src={require("../assets/line2.png")}
+        alt="desihn"
+        width={50}
+        height={50}
+        />
+        <p>Located minutes from Auckland Airport, Heartland Hotel has some great hotel deals.</p>
+      </section>
       <div className="offer-section">
        <div className="where-to-container">
           <label htmlFor="where-to" className="where-to-label">FILTER BY:</label>

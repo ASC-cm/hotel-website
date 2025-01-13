@@ -209,7 +209,18 @@ function SearchBar() {
         )}
       </div>
 
-      <button className="search-button">Check Availability</button>
+      {/* Existing Button for Larger Screens */}
+      <button className="search-button">
+        Check Availability
+      </button>
+
+      {/* New Button for Smaller Screens */}
+      <button
+        className="search-button-mobile"
+        onClick={() => window.location.href = '/check-availability'}
+      >
+        Check Availability
+      </button>
     </div>
   );
 }

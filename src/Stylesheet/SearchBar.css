@@ -152,76 +152,73 @@ button:focus {
   width: 100%;
 }
 
-/* Search Button Styling */
-.search-button {
+/* General Styling for Buttons */
+.search-button,
+.search-button-mobile {
   background-color: #28a745;
   color: white;
   padding: 12px;
   border: none;
   border-radius: 5px;
-  width: 30%;
   font-size: 16px;
   cursor: pointer;
+  text-align: center;
 }
 
-.search-button:hover {
+.search-button:hover,
+.search-button-mobile:hover {
   background-color: #218838;
 }
 
-/* Responsive Design for Small Screens */
-@media (max-width: 1024px) {
-  .search-bar {
-    flex-direction: column;
-    padding: 15px;
+/* Larger Screens: Show full form, hide mobile button */
+@media (min-width: 769px) {
+  .search-button {
+    display: inline-block; /* Default button visible */
   }
-
-  .search-field {
-    width: 48%;
-  }
-
-  .date-picker-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .check-in-date,
-  .check-out-date {
-    width: 100%;
+  .search-button-mobile {
+    display: none; /* Mobile button hidden */
+    margin-right: 100rem;
+    text-align: center;
   }
 }
 
+/* Smaller Screens: Hide full form, show mobile button */
 @media (max-width: 768px) {
   .search-bar {
     flex-wrap: wrap; /* Allow wrapping */
-    justify-content: flex-start; /* Align items to the left */
-    padding: 10px; /* Reduce padding */
-    gap: 0.5rem; /* Smaller gaps for compact layout */
+    justify-content: center;
+    padding: 10px;
+    gap: 0.5rem;
   }
 
   .search-field {
-    flex: 1 1 calc(50% - 0.5rem); /* Each field takes up 50% of the row with spacing */
-    max-width: 100%; /* Prevent exceeding container width */
+    display: none; /* Hide all form fields */
   }
 
   .search-button {
-    flex: 1 1 100%; /* Button spans the entire width */
-    text-align: center; /* Center the text */
+    display: none; /* Hide larger screen button */
+  }
+
+  .search-button-mobile {
+    display: block; /* Show mobile button */
+    width: 100%; /* Full width for mobile button */
+    margin-right: 100rem;
+    text-align: center;
+    
   }
 }
 
 @media (max-width: 480px) {
   .search-bar {
-    flex-direction: column; /* Stack elements vertically */
-    padding: 5px; /* Minimal padding for compact layout */
+    flex-direction: column;
+    padding: 5px;
   }
 
-  .search-field {
-    flex: 1 1 100%; /* Each field spans full width */
-    margin-bottom: 10px; /* Add spacing between fields */
-  }
-
-  .search-button {
-    width: 100%; /* Button spans full width */
-    padding: 10px; /* Adjust padding for smaller screens */
+  .search-button-mobile {
+    width: 100%; /* Full-width mobile button */
+    padding: 10px;
+    text-align: center;
+    margin-right: 20rem;
+    margin-top: 2rem;
   }
 }

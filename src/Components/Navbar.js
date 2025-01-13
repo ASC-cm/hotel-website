@@ -30,6 +30,10 @@ function Navbar() {
       {/* Sidebar Menu */}
       <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
         <div className="sidebar-header">
+          <div className="navbar-brand1">
+            <h1 className="navbar-logo">SCENIC HOTEL GROUP</h1>
+            <p className="navbar-subtitle">New Zealand Owned & Operated</p>
+          </div>
           <FaTimes className="close-icon" onClick={toggleMenu} />
         </div>
         <ul className="sidebar-menu">
@@ -37,7 +41,7 @@ function Navbar() {
             <Link to="/" onClick={toggleMenu}>Hotels</Link>
           </li>
           <li>
-            <Link to="/explore" onClick={toggleMenu}>Explore</Link>
+            <Link to="/Room" onClick={toggleMenu}>Rooms</Link>
           </li>
           <li>
             <Link to="/Offer" onClick={toggleMenu}>Offers</Link>

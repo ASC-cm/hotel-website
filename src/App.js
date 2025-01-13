@@ -8,6 +8,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Footer from './Pages/Footer';
 import Offer from './Pages/Offer';
+import Room from './Pages/Room';
 import Function from './Pages/Function';
 import { CartProvider } from './Context/CartContext';
 import "./App.css"; 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/Register" element={<Register />} />
         <Route path="/Offer" element={<Offer />} />
         <Route path="/Function" element={<Function />} />
+        <Route path="/Room" element={<Room />} />
       </Routes>
       <Footer />
     </Router>

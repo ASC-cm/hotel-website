@@ -1,18 +1,17 @@
-/* Hero Section Styling */
 .hero-section {
   height: 70vh;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(2);
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: none; 
 }
 
-/* Hero Overlay Styling */
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4); 
   color: white;
   text-align: center;
   padding: 2rem;
@@ -38,55 +37,50 @@
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
-  /* For tablets and smaller screens */
   .hero-section {
-    height: 60vh; /* Slightly reduce height */
+    height: 60vh; /* Adjust height */
   }
-
   .hero-overlay h1 {
-    font-size: 2.5rem; /* Adjust heading size */
+    font-size: 2.5rem; /* Smaller heading */
   }
-
   .hero-overlay p {
     font-size: 1rem; /* Adjust paragraph size */
   }
 }
 
 @media (max-width: 768px) {
-  /* For mobile screens */
   .hero-section {
-    height: 50vh; /* Further reduce height on small screens */
+    height: 50vh; /* Further reduce height */
   }
-
   .hero-overlay {
     padding: 1.5rem; /* Reduce padding */
-    align-items: center; /* Center-align content */
+    align-items: center; /* Center content */
   }
-
   .hero-overlay h1 {
-    font-size: 2rem; /* Smaller heading for mobile */
+    font-size: 2rem; /* Smaller heading */
   }
-
   .hero-overlay p {
-    font-size: 1rem; /* Smaller paragraph for mobile */
+    font-size: 1rem; /* Adjust paragraph size */
   }
 }
 
 @media (max-width: 480px) {
-  /* For very small screens */
   .hero-section {
-    height: 40vh; /* Minimized height for very small screens */
+    height: 40vh; /* Minimal height */
   }
-
   .hero-overlay {
-    padding: 1rem; /* Reduce padding more */
+    padding: 1rem; /* Reduce padding further */
   }
-
   .hero-overlay h1 {
-    font-size: 1.5rem; /* Smaller heading for very small screens */
+    font-size: 1.5rem; /* Smaller heading */
   }
-
   .hero-overlay p {
-    font-size: 0.9rem; /* Smaller paragraph for very small screens */
+    font-size: 0.9rem; 
   }
 }
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-section {
+    background-image: url('../assets/background.jpeg'); 
+  }
+}
+
