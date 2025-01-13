@@ -130,6 +130,64 @@
   background-color:#4caf50;
   color: #ffffff;
 }
+.shg-advantage {
+  display: flex;
+  align-items: center;
+  background-color: #f7f9f3; /* Light background color */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.shg-image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.shg-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.shg-content {
+  flex: 2;
+  color: #52674c; /* Greenish text color */
+}
+
+.shg-content h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #5e8b5e;
+}
+
+.shg-content h2 {
+  font-size: 36px;
+  margin: 5px 0;
+}
+
+.shg-content h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #8ba98b;
+}
+
+.shg-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.find-out-more {
+  color: #5e8b5e;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.find-out-more:hover {
+  text-decoration: underline;
+  color: #4a6f4a; /* Darker green on hover */
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {

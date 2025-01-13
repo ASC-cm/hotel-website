@@ -1,0 +1,161 @@
+.offer-section {
+    margin-top: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  .where-to-container {
+    position: relative;
+    margin-top: 15rem;
+  }
+  
+  .where-to-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .where-to-input {
+    position: relative;
+    width: 100%;
+  }
+  
+  .where-to-input input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dropdown-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .dropdown div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .nigeria-states {
+    margin-top: 10px;
+  }
+  
+  .nigeria-states div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .nigeria-states div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .offer-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Set a dark color for visibility */
+    margin-top: 15rem;
+    padding: 10px 0; /* Ensure there's some padding for clarity */
+  }
+  
+  /* Grid layout for the cards */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for small screens */
+    gap: 20px;
+    padding-top: 20px;
+  }
+  
+  /* Card styling */
+  .offer-card {
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    margin-bottom: 20px;
+  }
+  
+  /* Badge styling */
+  .offer-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: #1d4ed8; /* Tailwind blue-500 */
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 9999px;
+  }
+  
+  /* Image styling */
+  .offer-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Card content styling */
+  .offer-content {
+    padding: 16px;
+  }
+  
+  .offer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .offer-location {
+    font-size: 14px;
+    color: #4b5563; /* Tailwind gray-600 */
+  }
+  
+  .offer-link {
+    font-size: 14px;
+    color: #3b82f6; /* Tailwind blue-500 */
+    text-decoration: none;
+    margin-top: 12px;
+    display: inline-block;
+  }
+  
+  .offer-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (min-width: 768px) {
+    .offer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .offer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

@@ -89,6 +89,28 @@ const Main = () => {
         </p>
         <button>OUR COLLECTION</button>
       </section>
+      <section>
+        <div className="shg-advantage">
+          <div className="shg-image">
+          <img src={require('../assets/me.jpg')} alt="person" />
+          </div>
+          <div className="shg-content">
+            <h4>Business Traveller Discounts</h4>
+            <h2>SHG Advantage</h2>
+            <h3>For Kiwis Who Sleep Away on the Job</h3>
+            <p>
+              If your job calls for you to travel, whether it be multiple times a week
+              or only once or twice a year, the Scenic Hotel Group is here to help
+              give your business the advantage. Our new SHG Advantage programme gives
+              you easy access to instant rewards, additional discounts, and VIP
+              benefits, deals, and promotions at all our hotels around New Zealand.
+            </p>
+            <a href="#find-out-more" className="find-out-more">
+              Find Out More →
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
     
   );

@@ -3,6 +3,7 @@
   height: 70vh;
   background-size: cover;
   background-position: center;
+  filter: brightness(2);
   position: relative;
   display: flex;
   align-items: center;

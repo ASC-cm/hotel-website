@@ -29,7 +29,7 @@ import HeroSection from '../Components/HeroSection';
 import SearchBar from '../Components/Searchbar';
 import Main from '../Components/Main';
 
-function HomePage() {
+const Home = () => {
   return (
     <div>
       <Navbar />
@@ -40,5 +40,5 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Home;
 

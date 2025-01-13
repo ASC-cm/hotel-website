@@ -1,49 +1,118 @@
 import React from "react";
+import "../Stylesheet/Footer.css"; 
 
 const Footer = () => {
-    return (
-        <div>
-            <footer>
-              <div className="footer">
-              <div className="footer-container">
-        <h2>HELP & INFORMATION</h2>
-        <a href="./Contact">Help</a>
-        <a href="./Contact">Check programs offer</a>
-        <a href="./Contact">Duration of courses</a>
-        <a href="./Contact">FAQ</a>
+  return (
+    <footer className="footer">
+      <div className="footer-signup">
+        <h3>Sign up to Scenic News</h3>
+        <form className="signup-form">
+          <div className="form-group">
+            <input type="text" placeholder="First Name *" />
+            <input type="text" placeholder="Last Name *" />
+          </div>
+          <input type="email" placeholder="Email *" />
+          <div className="form-group-checkbox">
+            <input type="checkbox" id="accept-policy" />
+            <label htmlFor="accept-policy">
+              By submitting this form, you accept our{" "}
+              <a href="/privacy-policy">privacy policy</a>.
+            </label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
       </div>
-      <div className="footer-container">
-        <h2>ABOUT Asdin</h2>
-        <a href="./About">About us</a>
-        <a href="./About">Careers at Asdin</a>
-        <a href="./About">Self responsibility</a>
-        <a href="./About">Investors' site</a>
-      </div>
-      <div className="footer-container">
-        <h2>MORE FROM US</h2>
-        <a href="./Developer Incubator">Mobile & Asdin App</a>
-        <a href="./Developer Incubator">Discount</a>
-        <a href="./Developer Incubator">Gift vouchers</a>
-        <a href="./Developer Incubator">Discover Asdin program credit-card</a>
-        <a href="./Developer Incubator">Asdin x thrift+</a>
-      </div>
-      <div className="footer-container">
-        <h2>JOINING FROM:</h2>
-        <p>You're in <span class="country">Nigeria <img src="images/nigeria.png" alt="Flag 1" width="15" height="10"></img></span>   | <a href="./">Change</a></p>
-        <p>Some of our international sites:</p>
-        <div className="flags">
-          <img src="images/algeria.png" alt="Flag 1" width="200" height="200"></img>
-          <img src="images/angola.png" alt="Flag 1" width="200" height="200"></img>
-          <img src="images/canada.png" alt="Flag 1" width="200" height="200"></img>
-          <img src="images/france.png" alt="Flag 1" width="200" height="200"></img>
-          <img src="images/ghana.png" alt="Flag 1" width="200" height="200"></img>
-          <img src="images/uk.png" alt="Flag 1" width="200" height="200"></img>
+
+      <div className="footer-links">
+        <div className="column">
+          <h4>HOTELS</h4>
+          <ul>
+            <li>Explore Regions</li>
+            <li>Special Offers</li>
+            <li>Restaurants & Bars</li>
+            <li>Gift Shop & Vouchers</li>
+          </ul>
+        </div>
+        <div className="column">
+          <h4>OUR COLLECTION</h4>
+          <ul>
+            <li>Heartland Hotels</li>
+            <li>Scenic Hotels</li>
+            <li>Legacy Collection</li>
+            <li>Pet Friendly Hotels</li>
+          </ul>
+        </div>
+        <div className="column">
+          <h4>FUNCTIONS</h4>
+          <ul>
+            <li>Conferences</li>
+            <li>Weddings</li>
+            <li>Special Events</li>
+            <li>Rewards</li>
+          </ul>
+        </div>
+        <div className="column">
+          <h4>OUR STORY</h4>
+          <ul>
+            <li>News</li>
+            <li>Your Career</li>
+            <li>Sustainability</li>
+            <li>Home Grown</li>
+            <li>Partnerships</li>
+          </ul>
+        </div>
+        <div className="column">
+          <h4>BOOK DIRECT</h4>
+          <ul>
+            <li>Book with Confidence</li>
+            <li>Business Travel</li>
+            <li>SuperGold Members</li>
+          </ul>
+        </div>
+        <div className="column">
+          <h4>CONTACT US</h4>
+          <ul>
+            <li>
+              <a href="/privacy-policy">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/terms-conditions">Terms & Conditions</a>
+            </li>
+          </ul>
         </div>
       </div>
-              </div>
-            </footer>
+
+      <div className="footer-bottom">
+        <div className="social-links">
+          <a href="#facebook">f</a>
+          <a href="#instagram">i</a>
+          <a href="#linkedin">l</a>
         </div>
-    );
-  };
-  
-  export default Footer;
+        <div className="footer-info">
+          <p>
+            SCENIC HOTEL GROUP<br />
+            New Zealand Owned & Operated
+          </p>
+          <div className="logos">
+            <span>Legacy Collection</span>
+            <span>Scenic Hotels</span>
+            <span>Heartland Hotels</span>
+          </div>
+        </div>
+        <div className="footer-contact">
+          <p>
+            Need Help with Reservations?<br />
+            P. 0800 69 69 63 or +64 3 357 1919<br />
+            <a href="/contact">Contact Us</a>
+          </p>
+        </div>
+        <div className="copyright">
+          &copy; Scenic Hotel Group 2025. Designed and Developed by{" "}
+          <a href="https://www.publica.com">Publica</a>.
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
