@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from '../Components/Navbar';
-import background from '../assets/resturant.jpeg';
+import background from '../assets/function.webp';
 import SearchBar from '../Components/Searchbar';
 import Map from '../Components/Map';
 import "../Stylesheet/Function.css"
@@ -39,9 +39,11 @@ function Function() {
         <h2>Function Room</h2>
       <div className="function-room-section">
         <img
-         src={require('../assets/rest.jpeg')} 
+         src={require('../assets/function pic 2.webp')} 
           alt="Function Room"
           className="function-room-image"
+          width={200}
+          height={150}
         />
         <div className="function-room-details">
           <h1 className="room-title">Catalina Room</h1>

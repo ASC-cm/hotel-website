@@ -1,0 +1,118 @@
+.carousel-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+    position: relative;
+    overflow: hidden; /* Ensures items outside the visible area are hidden */
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Smooth sliding transition */
+  }
+  
+  .carousel-item {
+    flex: 0 0 100%; /* Each item occupies 100% of the carousel container */
+    width: 100%;
+    height: 400px;
+    position: relative;
+  }
+  
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .image-wrapper .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  button.prev,
+  button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  button.prev {
+    left: -40px;
+  }
+  
+  button.next {
+    right: -40px;
+  }
+  
+  button.prev:hover,
+  button.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .carousel-item {
+      width: 250px;
+      height: 350px;
+    }
+  
+    .image-wrapper .overlay {
+      padding: 8px;
+    }
+  
+    button.prev,
+    button.next {
+      font-size: 20px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-item {
+      width: 200px;
+      height: 300px;
+    }
+  
+    .image-wrapper .overlay {
+      padding: 6px;
+      font-size: 11px;
+    }
+  
+    button.prev,
+    button.next {
+      font-size: 18px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

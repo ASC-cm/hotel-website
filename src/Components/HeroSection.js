@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Stylesheet/HeroSection.css';
-import background from '../assets/background.jpeg';
+import background from '../assets/wallpaper.webp';
 
 function HeroSection() {
   return (

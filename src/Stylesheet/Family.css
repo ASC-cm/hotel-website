@@ -1,0 +1,50 @@
+.features-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .feature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #00aaff;
+    padding: 10px 0;
+    width: 45%;
+  }
+  
+  .feature-row span {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .feature-row img {
+    width: 24px;
+    height: 24px;
+  }
+  .details-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+  }
+  
+  .details-containerh2 {
+    font-size: 3rem;
+    color: #4caf50;
+    margin-bottom: 1rem;
+  }
+  
+  .details-container p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 1rem 0;
+  }
+  
+  
