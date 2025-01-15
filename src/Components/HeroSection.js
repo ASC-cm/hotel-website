@@ -6,9 +6,7 @@ function HeroSection() {
   return (
     <>
      <div className="hero-section" style={{ backgroundImage: `url(${background})` }}>
-      <div className="hero-overlay">
-       
-      </div>
+      <div className="hero-overlay" />
     </div>
     </>
   );

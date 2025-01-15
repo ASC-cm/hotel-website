@@ -1,167 +1,169 @@
 .footer {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-signup {
+  margin-bottom: 30px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.column {
+  flex: 1 1 150px;
+  margin: 10px;
+}
+
+.column h4 {
+  font-weight: bold;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column li {
+  margin-bottom: 5px;
+}
+
+.column li:hover {
+  color: blueviolet;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.column a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.column a:hover {
+  text-decoration: underline;
+  color: blueviolet;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  gap: 10px;
+}
+
+.social-links a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: blueviolet;
+  text-decoration: underline;
+}
+
+.footer-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-contact {
+  text-align: right;
+}
+
+.copyright {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Responsive Design */
+
+/* Medium screens (tablets and small desktops) */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .footer-signup {
-    margin-bottom: 30px;
+
+  .column {
+    flex: 1 1 100%;
+    margin: 5px 0;
   }
-  
-  .signup-form {
-    display: flex;
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .form-group {
     flex-direction: column;
   }
-  
-  .form-group {
-    display: flex;
-    gap: 10px;
-  }
-  
+
   input {
-    background-color: #fff;
-    color: #000;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 100%;
+    padding: 8px;
   }
-  
-  input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
+
   button {
-    background-color: #fff;
-    color: #000;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+    font-size: 14px;
+    padding: 8px;
   }
-  
+
   .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .column {
-    flex: 1;
-    margin: 10px;
-    min-width: 150px;
-  }
-  
-  .column h4 {
-    font-weight: bold;
-  }
-  
-  .column ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .column li {
-    margin-bottom: 5px;
-  }
-  
-  .column li:hover {
-    color: blueviolet; 
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .column a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .column a:hover {
-    text-decoration: underline; /* Add underline on hover */
-    color: blueviolet; 
-  }
-  
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    border-top: 1px solid #444;
-    padding-top: 20px;
   }
-  
-  .social-links a {
-    color: #fff;
-    margin-right: 10px;
-    text-decoration: none;
-  }
-  
-  .social-links a:hover {
-    color: blueviolet; 
-    text-decoration: underline;
-  }
-  
-  .footer-info {
+
+  .footer-bottom {
+    flex-direction: column;
     text-align: center;
-    margin-bottom: 20px;
   }
-  
-  .footer-contact {
-    text-align: right;
+
+  .footer-info p,
+  .footer-contact p {
+    font-size: 14px;
   }
-  
+
   .copyright {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 12px;
+    font-size: 10px;
   }
-  
-  /* Responsive Design */
-  
-  /* Medium screens (tablets and small desktops) */
-  @media (max-width: 768px) {
-    .footer-links {
-      flex-direction: column; /* Stack columns vertically */
-    }
-  
-    .column {
-      flex: 1 1 100%; /* Ensure columns take full width */
-      margin: 5px 0;
-    }
-  }
-  
-  /* Small screens (phones) */
-  @media (max-width: 480px) {
-    .form-group {
-      flex-direction: column; /* Stack inputs vertically */
-    }
-  
-    input {
-      padding: 8px; /* Adjust padding for smaller screens */
-    }
-  
-    button {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .footer-links {
-      flex-direction: column; /* Stack links vertically */
-    }
-  
-    .footer-bottom {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .footer-info p,
-    .footer-contact p {
-      font-size: 14px;
-    }
-  
-    .copyright {
-      font-size: 10px; /* Smaller text for copyright section */
-    }
-  }
-  
+}
