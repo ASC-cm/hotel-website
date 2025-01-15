@@ -5,33 +5,33 @@ import SearchBar from '../Components/Searchbar';
 import Roomc from "../Pages/Roomc";
 import "../Stylesheet/Function.css";
 import "../Stylesheet/Room.css";
+import "../Stylesheet/Family.css";
 import "../Stylesheet/Superior.css";
 
 const images = [
-    require("../assets/superior1.webp"),
-    require("../assets/superior2.webp"),
-    require("../assets/superior3.webp"),
-    require("../assets/superior4.webp"),
+    require("../assets/family.webp"),
+    require("../assets/family1.webp"),
+    require("../assets/family2.webp"),
+    require("../assets/family4.webp"),
 ];
 
-const Superior = () => {
+const Deluxe = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextImage();
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [currentIndex]);
-
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
-
-    const prevImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
-
+    
+        useEffect(() => {
+            const interval = setInterval(() => {
+                nextImage();
+            }, 3000);
+            return () => clearInterval(interval);
+        }, [currentIndex]);
+    
+        const nextImage = () => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        };
+    
+        const prevImage = () => {
+            setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+        };
     const features = [
         { name: "Free Hi-speed Wi-Fi", icon: require("../assets/icons/wifi.png") },
         { name: "TV with Sky Channels", icon: require("../assets/icons/tv.png") },
@@ -58,12 +58,14 @@ const Superior = () => {
             </div>
             <SearchBar />
             <div className="details-container">
-                <h2>Superior Twin Queen or King Queen Room</h2>
+                <h2>Deluxe King or Twin Queen, with tropical garden views</h2>
                 <hr />
                 <p>
-                    Superior rooms all include air conditioning, TV with Sky channels, private balcony
-                    or patio, mini fridge, tea and coffee making facilities and free WiFi. The en-suite
-                    bathroom comes with a hairdryer and complimentary toiletries.
+                 Our Deluxe Rooms come with a private balcony or patio overlooking a lush tropical garden. 
+                 All rooms include air conditioning and heating, TV with Sky channels,  mini fridge, tea 
+                 and coffee making facilities, free WiFi, and are double-glazed. An en-suite bathroom comes 
+                 with a hairdryer and complimentary toiletries. Rooms are located on the ground level or on 
+                 the 1st floor.
                 </p>
                 <div className="slider-container">
                     <button className="arrow left-arrow" onClick={prevImage}>
@@ -93,9 +95,17 @@ const Superior = () => {
                     ))}
                 </div>
             </div>
+            <div className='let-check'>
+                <h1>How to book a Deluxe Room</h1>
+                <h4>Deluxe rooms are located close to the pool and other hotel facilities. 
+                    Rollaway beds and Cots are available on request (please arrange with 
+                    the hotel prior to arrival to ensure we’re able to arrange).
+                </h4>
+                <button className='check-button'>Check Availabilty</button>
+            </div>
             <Roomc />
         </div>
     );
 };
 
-export default Superior;
+export default Deluxe;

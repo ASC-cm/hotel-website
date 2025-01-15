@@ -45,16 +45,31 @@ function Room() {
       capacity: "1-5",
       path: "/one-bedroom-suite",
     },
+    {
+      title: "Deluxe Room",
+      description:
+        "Scenic Hotel Bay of Islands Deluxe Rooms offer guests a touch of luxury set amongst stunning tropical gardens. Each room has a private balcony or patio, your choice of Super King bed or 2 Queen beds.",
+      image:  require("../assets/bu.webp"),
+      size: "40m²",
+      capacity: "1-5",
+      path: "/one-bedroom-suite",
+    },
+    {
+      title: "Accessible Room",
+      description:
+        "Our Accessible Rooms sit within our Superior Room block and come with Twin Queen beds. The en-suite bathroom has accessible features suitable for guests in a wheelchair or with mobility issues. Rooms are located on the ground floor and have a small patio.",
+      image:  require("../assets/bu.webp"),
+      size: "40m²",
+      capacity: "1-5",
+      path: "/one-bedroom-suite",
+    },
   ];
   
   return (
     <div>
       <Navbar />
       <div className="hero-section" style={{ backgroundImage: `url(${background})` }}>
-        <div className="hero-overlay1">
-            <h1>Win this Summer</h1>
-            <p>Share your summer snaps for your chance to win, find out more</p>
-        </div>
+        <div className="hero-overlay1" />
       </div>
       <SearchBar />
       <section className='location-section1'>

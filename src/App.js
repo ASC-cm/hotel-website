@@ -14,7 +14,10 @@ import Function from './Pages/Function';
 import Family from './Context/family-room';
 import Standard from './Context/standard-room';
 import Superior from './Context/superior-room';
-import Bedroom from './Context/one-bedroom-suite'
+import Bedroom from './Context/one-bedroom-suite';
+import Deluxe from './Context/Deluxe-room';
+import Assessible from './Context/Assessible-room';
+
 import "./App.css"; 
 
 
@@ -30,6 +33,8 @@ function App() {
         <Route path="/standard-room" element={<Standard />} />
         <Route path="/superior-room" element={<Superior />} />
         <Route path="/one-bedroom-suite" element={<Bedroom />} />
+        <Route path="/Deluxe" element={<Deluxe />} />
+        <Route path="/Assessible" element={<Assessible />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
         <Route path="/Offer" element={<Offer />} />

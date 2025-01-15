@@ -4,7 +4,7 @@ import "../Stylesheet/Roomc.css";
 const rooms = [
   {
     name: "Family Room",
-    image: require("../assets/superior plus.webp"),
+    image: require("../assets/family.webp"),
     size: "40m²",
     occupancy: "3",
   },
@@ -16,13 +16,13 @@ const rooms = [
   },
   {
     name: "Deluxe Room",
-    image: require("../assets/family1.webp"),
+    image: require("../assets/superior plus.webp"),
     size: "35m²",
     occupancy: "1-2",
   },
   {
     name: "Accessible Room",
-    image: require("../assets/family2.webp"),
+    image: require("../assets/family1.webp"),
     size: "40m²",
     occupancy: "1-2",
   },
@@ -30,7 +30,7 @@ const rooms = [
     name: "Standard Room",
     image: require("../assets/standard room.webp"),
     size: "30m²",
-    occupancy: "1-2",
+    occupancy: "1",
   },
   
 ];

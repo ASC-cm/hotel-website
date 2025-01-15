@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import background from '../assets/entrance.jpeg';
+import background from '../assets/offer1.webp';
 import Navbar from "../Components/Navbar";
 import SearchBar from '../Components/Searchbar';
 import "../Stylesheet/Offer.css"; 
@@ -79,10 +79,7 @@ const Offer = () => {
     <div>
       <Navbar />
       <div className="hero-section" style={{ backgroundImage: `url(${background})` }}>
-        <div className="hero-overlay">
-            <h1>Win this Summer</h1>
-            <p>Share your summer snaps for your chance to win, find out more</p>
-        </div>
+        <div className="hero-overlay" />
     </div>
       <SearchBar />
       <section className='location-section1'>

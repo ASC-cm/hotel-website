@@ -15,10 +15,7 @@ function Function() {
     <div>
       <Navbar />
       <div className="hero-section" style={{ backgroundImage: `url(${background})` }}>
-        <div className="hero-overlay1">
-            <h1>Win this Summer</h1>
-            <p>Share your summer snaps for your chance to win, find out more</p>
-        </div>
+        <div className="hero-overlay1" />
       </div>
       <SearchBar />
       <section className='location-section1'>

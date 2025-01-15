@@ -1,37 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Components/Navbar';
-import background from '../assets/family.webp';
+import background from '../assets/ass.webp';
 import SearchBar from '../Components/Searchbar';
 import Roomc from "../Pages/Roomc";
 import "../Stylesheet/Function.css";
 import "../Stylesheet/Room.css";
+import "../Stylesheet/Family.css";
 import "../Stylesheet/Superior.css";
 
 const images = [
-    require("../assets/superior1.webp"),
-    require("../assets/superior2.webp"),
-    require("../assets/superior3.webp"),
-    require("../assets/superior4.webp"),
+    require("../assets/ass.webp"),
+    require("../assets/ass5.webp"),
+    require("../assets/ass4.webp"),
+    require("../assets/ass3.webp"),
+    require("../assets/ass2.webp"),
 ];
 
-const Superior = () => {
+const Assessible = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextImage();
-        }, 3000);
-        return () => clearInterval(interval);
-    }, [currentIndex]);
-
-    const nextImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
-
-    const prevImage = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
-
+    
+        useEffect(() => {
+            const interval = setInterval(() => {
+                nextImage();
+            }, 3000);
+            return () => clearInterval(interval);
+        }, [currentIndex]);
+    
+        const nextImage = () => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        };
+    
+        const prevImage = () => {
+            setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+        };
     const features = [
         { name: "Free Hi-speed Wi-Fi", icon: require("../assets/icons/wifi.png") },
         { name: "TV with Sky Channels", icon: require("../assets/icons/tv.png") },
@@ -58,12 +59,15 @@ const Superior = () => {
             </div>
             <SearchBar />
             <div className="details-container">
-                <h2>Superior Twin Queen or King Queen Room</h2>
+                <h2>Superior Twin Queen Room – Accessible</h2>
                 <hr />
                 <p>
-                    Superior rooms all include air conditioning, TV with Sky channels, private balcony
-                    or patio, mini fridge, tea and coffee making facilities and free WiFi. The en-suite
-                    bathroom comes with a hairdryer and complimentary toiletries.
+                Our Accessible Rooms sit within our Superior Room block and come with two Queen beds. 
+                The en-suite bathroom has accessible features like a roll-in shower, shower seat and 
+                hand rails, suitable for guests in a wheelchair or with mobility issues. Rooms are 
+                located on the ground floor and have a small patio. All rooms include air conditioning, 
+                TV with Sky channels, mini fridge, tea and coffee making facilities and free WiFi. The 
+                en-suite bathroom comes with a hairdryer and complimentary toiletries.
                 </p>
                 <div className="slider-container">
                     <button className="arrow left-arrow" onClick={prevImage}>
@@ -93,9 +97,17 @@ const Superior = () => {
                     ))}
                 </div>
             </div>
+            <div className='let-check'>
+                <h1>How to book an Accessible Room</h1>
+                <h4>Accessible rooms are located close to the pool and other hotel facilities. 
+                    Rollaway beds and Cots are available on request (please arrange with 
+                    the hotel prior to arrival to ensure we’re able to arrange).
+                </h4>
+                <button className='check-button'>Check Availabilty</button>
+            </div>
             <Roomc />
         </div>
     );
 };
 
-export default Superior;
+export default Assessible;

@@ -1,0 +1,122 @@
+.slider-container {
+    position: relative;
+    width: 90%; /* Adjusted for responsiveness */
+    max-width: 50rem; /* Maintain a maximum size */
+    height: 50vh; /* Adjust height to viewport */
+    overflow: hidden;
+    margin: auto;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(calc(-100% * var(--currentIndex, 0)));
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.left-arrow {
+    left: 10px;
+    color: blue;
+}
+
+.right-arrow {
+    right: 10px;
+    color: blue;
+}
+.let-check {
+    background-color: #f9f9f9; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    max-width: 500px; /* Restrict width */
+    margin: 2px auto; /* Center alignment */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center; /* Center text inside */
+}
+
+.let-check h4 {
+    font-size: 1.1rem; /* Slightly larger text */
+    color: #333; /* Dark text color */
+    margin-bottom: 15px; /* Space below heading */
+    line-height: 1.5; /* Improve readability */
+}
+
+.check-button {
+    background-color: #218838; /* Button blue background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Inner padding */
+    font-size: 1rem; /* Button text size */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.check-button:hover {
+    background-color: #17e143; 
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        height: 40vh; /* Adjust height for tablets */
+    }
+
+    .arrow {
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+
+    .let-check {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .let-check h4 {
+        font-size: 0.9rem; /* Smaller font size for headings */
+    }
+
+    .check-button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 0.9rem; /* Reduce button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        height: 30vh; /* Further adjustment for very small screens */
+    }
+
+    .arrow {
+        padding: 5px; /* Further reduce padding */
+    }
+
+    .let-check {
+        padding: 7px; /* Compact padding */
+    }
+
+    .let-check h4 {
+        font-size: 0.8rem; /* Smaller font size */
+    }
+
+    .check-button {
+        padding: 6px 12px; /* Smaller button */
+        font-size: 0.8rem; /* Adjust button font size */
+    }
+}
