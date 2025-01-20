@@ -47,7 +47,7 @@ function Navbar() {
             <Link to="/Offer" onClick={toggleMenu}>Offers</Link>
           </li>
           <li>
-            <Link to="/dining" onClick={toggleMenu}>Dining</Link>
+            <Link to="/Dinning" onClick={toggleMenu}>Dining</Link>
           </li>
           <li>
             <Link to="/Function" onClick={toggleMenu}>Functions</Link>

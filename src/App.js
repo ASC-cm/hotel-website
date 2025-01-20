@@ -17,6 +17,8 @@ import Superior from './Context/superior-room';
 import Bedroom from './Context/one-bedroom-suite';
 import Deluxe from './Context/Deluxe-room';
 import Assessible from './Context/Assessible-room';
+import Dinning from './Pages/Dinning';
+import Dine from './Pages/Dine';
 
 import "./App.css"; 
 
@@ -41,6 +43,8 @@ function App() {
         <Route path="/Function" element={<Function />} />
         <Route path="/Room" element={<Room />} />
         <Route path="/Roomc" element={<Roomc />} />
+        <Route path="/Dinning" element={<Dinning />} />
+        <Route path="/Dine" element={<Dine />} />
       </Routes>
       <Footer />
     </Router>

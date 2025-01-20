@@ -23,18 +23,6 @@
   align-items: flex-start;
 }
 
-/* Hero Overlay Heading */
-.hero-overlay h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-/* Hero Overlay Paragraph */
-.hero-overlay p {
-  font-size: 1.2rem;
-}
-
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
   .hero-section {

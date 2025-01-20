@@ -1,0 +1,159 @@
+/* General styles */
+.menu-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .menu-title {
+    font-size: 2.5rem;
+    color: #008cdd;
+    margin-bottom: 20px;
+  }
+  
+  .menu-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu-sidebar {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .menu-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-sidebar ul li {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #000;
+  }
+  
+  .menu-sidebar ul .active {
+    color: #008cdd;
+    font-weight: bold;
+    border-bottom: 2px solid #008cdd;
+  }
+  
+  .menu-details {
+    flex: 3;
+  }
+  
+  .menu-header {
+    font-size: 2rem;
+    color: #008cdd;
+  }
+  
+  .menu-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  
+  .menu-item h3 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .menu-item p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0 0 0;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .menu-content {
+      flex-direction: column;
+    }
+  
+    .menu-sidebar {
+      text-align: center;
+    }
+  
+    .menu-sidebar ul li {
+      font-size: 1rem;
+    }
+  
+    .menu-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .price {
+      align-self: flex-end;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .menu-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .menu-header {
+      font-size: 1.8rem;
+    }
+  
+    .menu-subtitle {
+      text-align: center;
+    }
+  
+    .menu-item h3 {
+      font-size: 1.3rem;
+    }
+  
+    .menu-item p {
+      font-size: 0.9rem;
+    }
+  
+    .price {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu-title {
+      font-size: 1.8rem;
+    }
+  
+    .menu-sidebar ul li {
+      font-size: 0.9rem;
+    }
+  
+    .menu-item h3 {
+      font-size: 1.2rem;
+    }
+  
+    .menu-item p {
+      font-size: 0.85rem;
+    }
+  
+    .price {
+      font-size: 1.2rem;
+    }
+  
+    .menu-container {
+      padding: 10px;
+    }
+  }
+  
