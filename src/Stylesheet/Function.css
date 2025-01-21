@@ -52,13 +52,13 @@ body {
 }
 
 .location-section1 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #4caf50;
   margin-bottom: 1rem;
 }
 
 .location-section1 p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.8;
   margin: 1rem 0;
 }
@@ -82,7 +82,7 @@ body {
 
 h2 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 40px;
+  font-size: 30px;
   color: #4caf50;
 }
 

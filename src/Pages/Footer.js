@@ -108,7 +108,7 @@ const Footer = () => {
         </div>
         <div className="copyright">
           &copy; Scenic Hotel Group 2025. Designed and Developed by{" "}
-          <a href="https://www.publica.com">Publica</a>.
+          <a href="https://portfolio-gamma-ten-75.vercel.app/">ASC-cm</a>.
         </div>
       </div>
     </footer>
