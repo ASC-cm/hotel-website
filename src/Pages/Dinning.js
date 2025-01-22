@@ -39,7 +39,7 @@ const Dinning = () => {
             </div>
             <SearchBar />
             <section className='location-section1'>
-                <h2>Explore Scenic Hotel Group’s Restaurants & Bars</h2>
+                <h2>Explore Heaven Hotel Group’s Restaurants & Bars</h2>
                 <img 
                     src={require("../assets/line2.png")}
                     alt="desihn"
@@ -47,8 +47,8 @@ const Dinning = () => {
                     height={50}
                 />
                 <p>
-                    Located in many popular regions in New Zealand as well as the South Pacific country of Niue, 
-                    Scenic Hotel Group brings you quality restaurants and bars alongside our hotels. Selecting 
+                    Located in many popular regions in God Almighty as well as the South Pacific country of Niue, 
+                    Heaven Hotel Group brings you quality restaurants and bars alongside our hotels. Selecting 
                     from the freshest local produce is our goal, and our commitment is to offer you a genuine 
                     sense of Kiwi hospitality and service.
                 </p>
@@ -77,7 +77,7 @@ const Dinning = () => {
                 <div className="text-section">
                     <h1>Dolphin Restaurant & Bar (Niue)</h1>
                     <p>
-                        Located at Scenic Matavai Resort Niue, the Dolphin Restaurant & Bar
+                        Located at Heaven Matavai Resort Niue, the Dolphin Restaurant & Bar
                         offers guests and visitors a mix of traditional Niuean and European
                         cuisine with stunning clifftop views. With stunning clifftop views
                         you’ll be amazed to be able to spot sea-life right from your table,

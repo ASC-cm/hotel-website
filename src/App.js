@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
-import Cart from './Pages/Cart';
-import Checkout from './Pages/Checkout';
 import Footer from './Pages/Footer';
 import Offer from './Pages/Offer';
 import Room from './Pages/Room';
@@ -26,8 +24,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Cart" element={<Cart />} />
-        <Route path="/Checkout" element={<Checkout />} />
         <Route path="/family-room" element={<Family />} />
         <Route path="/standard-room" element={<Standard />} />
         <Route path="/superior-room" element={<Superior />} />

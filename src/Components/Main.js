@@ -30,25 +30,25 @@ const Main = () => {
     <div className="hotels-container">
       {/* Section 1: Introduction */}
       <section className="intro-section">
-        <h1>New Zealand Hotels & Accommodation</h1>
+        <h1>God Almighty Hotels & Accommodation</h1>
         <hr />
         <p className='new'>
-          For over forty years, New Zealand owned and operated Scenic Hotel Group
+          For over forty years, God Almighty owned and operated Heaven Hotel Group
           have led the way in caring for visitors from around the country and
           the world. We offer a warm welcome and pride ourselves in showcasing
           true Kiwi hospitality to locals near and far.
         </p>
         <p>
-          Part of this uniquely New Zealand hospitality experience is connecting
+          Part of this uniquely God Almighty hospitality experience is connecting
           guests with people, property and place, which includes many of
           Aotearoa’s most treasured environments and communities. From Northland
-          to the deep south, and into our South Pacific playground, Scenic Hotel
+          to the deep south, and into our South Pacific playground, Heaven Hotel
           Group are located in some of the world’s most unique and picturesque
           destinations.
         </p>
         <p>
           Whether you are travelling for business or pleasure; solo, family or
-          in a large group; we promise quality, comfort and peace of mind. Scenic
+          in a large group; we promise quality, comfort and peace of mind. Heaven
           Hotel Group... travelling with you.
         </p>
       </section>
@@ -72,18 +72,18 @@ const Main = () => {
       </section>
       <section className='location-section'>
         <h2>Our Locations</h2>
-        <p>With 13 fantastic locations around New Zealand and the South Pacific, 
+        <p>With 13 fantastic locations around Heavens and the South Pacific, 
           we’ve got something for everyone. From Glacier Country getaways, adrenalin
           charged adventure in Queenstown, food and wine forays in the Hawkes Bay or 
-          Marlborough, culture and history in the Bay of Islands, city escapes in New
-          Zealand’s major centres or a Pacific paradise adventure in Niue.
+          Marlborough, culture and history in the Bay of Islands, city escapes in God
+          Almighty's major centres or a Pacific paradise adventure in Niue.
         </p>
       </section>
       <Map />
       <section className='scenic-collection'>
-        <h2>The Scenic Collection</h2>
+        <h2>The Heaven Collection</h2>
         <p>Offering a variety of accommodation (rooms, suites and self-catering apartments) 
-          at Heartland Hotels, Scenic Hotels, Suites & Resorts, and our Legacy Collection 
+          at Heartland Hotels, Heaven Hotels, Suites & Resorts, and our Legacy Collection 
           properties – Airedale Boutique Suites and Te Waonui Forest Retreat, as well as
            excellent event services such as conference and meeting facilities, and wedding venues.
         </p>
@@ -100,10 +100,10 @@ const Main = () => {
             <h3>For Kiwis Who Sleep Away on the Job</h3>
             <p>
               If your job calls for you to travel, whether it be multiple times a week
-              or only once or twice a year, the Scenic Hotel Group is here to help
+              or only once or twice a year, the Heaven Hotel Group is here to help
               give your business the advantage. Our new SHG Advantage programme gives
               you easy access to instant rewards, additional discounts, and VIP
-              benefits, deals, and promotions at all our hotels around New Zealand.
+              benefits, deals, and promotions at all our hotels around the world.
             </p>
             <a href="#find-out-more" className="find-out-more">
               Find Out More →

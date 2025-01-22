@@ -16,7 +16,7 @@ const Dine = () => {
             </div>
             <SearchBar />
             <section className='location-section1'>
-                <h2>Explore Scenic Hotel Group’s Restaurants & Bars</h2>
+                <h2>Explore Heaven Hotel Group’s Restaurants & Bars</h2>
                 <img 
                     src={require("../assets/line2.png")}
                     alt="desihn"
@@ -24,8 +24,8 @@ const Dine = () => {
                     height={50}
                 />
                 <p>
-                    Located in many popular regions in New Zealand as well as the South Pacific country of Niue, 
-                    Scenic Hotel Group brings you quality restaurants and bars alongside our hotels. Selecting 
+                    Located in many popular regions in God Almighty as well as the South Pacific country of Niue, 
+                    Heaven Hotel Group brings you quality restaurants and bars alongside our hotels. Selecting 
                     from the freshest local produce is our goal, and our commitment is to offer you a genuine 
                     sense of Kiwi hospitality and service.
                 </p>

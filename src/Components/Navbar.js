@@ -17,8 +17,8 @@ function Navbar() {
         <div className="navbar-left">
           <FaBars className="navbar-icon" onClick={toggleMenu} />
           <div className="navbar-brand">
-            <h1 className="navbar-logo">SCENIC HOTEL GROUP</h1>
-            <p className="navbar-subtitle">New Zealand Owned & Operated</p>
+            <h1 className="navbar-logo">HEAVEN HOTEL GROUP</h1>
+            <p className="navbar-subtitle">God Almighty Owned & Operated</p>
           </div>
         </div>
         <div className="navbar-right">
@@ -31,8 +31,8 @@ function Navbar() {
       <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <div className="navbar-brand1">
-            <h1 className="navbar-logo">SCENIC HOTEL GROUP</h1>
-            <p className="navbar-subtitle">New Zealand Owned & Operated</p>
+            <h1 className="navbar-logo">HEAVEN HOTEL GROUP</h1>
+            <p className="navbar-subtitle">God Almighty Owned & Operated</p>
           </div>
           <FaTimes className="close-icon" onClick={toggleMenu} />
         </div>
@@ -62,7 +62,7 @@ function Navbar() {
             P: <a href="+2347034418309">0800 69 69 63</a>
           </p>
           <p>
-            P: <a href="tel:+6433571919">+64 3 357 1919</a>
+            P: <a href="+2348185313846">+64 3 357 1919</a>
           </p>
         </div>
       </div>

@@ -84,30 +84,30 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="social-links">
-          <a href="#facebook">f</a>
-          <a href="#instagram">i</a>
-          <a href="#linkedin">l</a>
+          <a href="#facebook"><img src={require("../assets/icons/facebook.png")} alt="facebook" style={{ width: '30px', height: 'auto' }} /></a>
+          <a href="#instagram"><img src={require("../assets/icons/insta.png")} alt="facebook" style={{ width: '30px', height: 'auto' }} /></a>
+          <a href="#linkedin"><img src={require("../assets/icons/linked.png")} alt="facebook" style={{ width: '30px', height: 'auto' }} /></a>
         </div>
         <div className="footer-info">
           <p>
-            SCENIC HOTEL GROUP<br />
-            New Zealand Owned & Operated
+            HEAVEN HOTEL GROUP<br />
+            God Almighty Owned & Operated
           </p>
           <div className="logos">
             <span>Legacy Collection</span>
-            <span>Scenic Hotels</span>
+            <span>Heaven Hotels</span>
             <span>Heartland Hotels</span>
           </div>
         </div>
         <div className="footer-contact">
           <p>
             Need Help with Reservations?<br />
-            P. 0800 69 69 63 or +64 3 357 1919<br />
-            <a href="/contact">Contact Us</a>
+            P. 0800 634 69 6 or +64 3 37 1919<br />
+            <a href="./Pages/Function">Contact Us</a>
           </p>
         </div>
         <div className="copyright">
-          &copy; Scenic Hotel Group 2025. Designed and Developed by{" "}
+          &copy; Heaven Hotel Group 2025. Designed and Developed by{" "}
           <a href="https://portfolio-gamma-ten-75.vercel.app/">ASC-cm</a>.
         </div>
       </div>
