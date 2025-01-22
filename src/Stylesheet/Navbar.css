@@ -105,11 +105,18 @@
 }
 
 /* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 20%; /* Full screen sidebar for smaller devices */
+  }
+}
+  
 @media (max-width: 768px) {
   /* Navbar Adjustments */
   .navbar {
     flex-direction: column; /* Stack navbar items vertically */
     align-items: flex-start;
+    
   }
 
   .navbar-right {
@@ -154,6 +161,6 @@
 }
 @media (max-width: 768px) {
   .sidebar {
-    width: 75%; /* Full screen sidebar for smaller devices */
+    width: 95%; /* Full screen sidebar for smaller devices */
   }
 }

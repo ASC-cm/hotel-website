@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar"
 import SearchBar from "../Components/Searchbar";
+import Footer from "./Footer";
 import background from '../assets/dinning.webp';
 import { useNavigate } from "react-router-dom";
 import "../Stylesheet/Function.css"
@@ -84,10 +85,11 @@ const Dinning = () => {
                         whale!
                     </p>
                     <button onClick={handleClick} className="cta-button">
-                        Dolphin Restaurant And Bar <span>→</span>
+                         Restaurant And Bar <span>→</span>
                     </button>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

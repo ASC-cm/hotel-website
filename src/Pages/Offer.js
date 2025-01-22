@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import background from '../assets/offer1.webp';
 import Navbar from "../Components/Navbar";
 import SearchBar from '../Components/Searchbar';
+import Footer from "./Footer";
 import "../Stylesheet/Offer.css"; 
 
 const Offer = () => {
@@ -150,6 +151,7 @@ const Offer = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

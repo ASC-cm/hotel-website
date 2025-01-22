@@ -6,6 +6,13 @@
     overflow: hidden;
     margin: auto;
 }
+.details-container h2{
+    margin-top: 2.5rem;
+    font-size: 2rem;
+}
+.details-container p{
+    font-size: 1rem;
+}
 
 .slider {
     display: flex;

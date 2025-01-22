@@ -59,7 +59,7 @@ function Navbar() {
         <div className="sidebar-footer">
           <p>Need help with reservations?</p>
           <p>
-            P: <a href="tel:0800696963">0800 69 69 63</a>
+            P: <a href="+2347034418309">0800 69 69 63</a>
           </p>
           <p>
             P: <a href="tel:+6433571919">+64 3 357 1919</a>

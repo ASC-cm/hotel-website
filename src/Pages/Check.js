@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../Stylesheet/SearchBar.css';
+import '../Stylesheet/Check.css';
 import DatePicker from 'react-datepicker';
+import Navbar from '../Components/Navbar';
 import "react-datepicker/dist/react-datepicker.css";
 
 // Sample Data for states and local governments
@@ -11,7 +12,7 @@ const nigerianStates = {
   // Add other states and their local governments here
 };
 
-function SearchBar() {
+function Check() {
   const [selectedState, setSelectedState] = useState('');
   const [localGovernments, setLocalGovernments] = useState([]);
   const [selectedLocalGovt, setSelectedLocalGovt] = useState('');
@@ -88,8 +89,10 @@ function SearchBar() {
   };
 
   return (
-    <div className="search-bar">
-      <div className="search-field">
+    <>
+    <Navbar />
+    <div className="search-bar1">
+      <div className="search-field1">
         <label>Hotel</label>
         <div className="hotel-input" onClick={() => setIsStateDropdownVisible(true)}>
           <input
@@ -119,7 +122,7 @@ function SearchBar() {
 
       {/* Only display Local Government input if a state is selected */}
       {selectedState && !selectedLocalGovt && (
-        <div className="search-field">
+        <div className="search-field1">
           <label>Local Government</label>
           <div className="local-govt-input" onClick={() => setIsLocalGovtDropdownVisible(true)}>
             <input
@@ -129,7 +132,7 @@ function SearchBar() {
               readOnly
             />
             {isLocalGovtDropdownVisible && (
-              <div ref={localGovtDropdownRef} className="dropdown-container">
+              <div ref={localGovtDropdownRef} className="dropdown-container1">
                 <select
                   value={selectedLocalGovt}
                   onChange={handleLocalGovtChange}
@@ -148,30 +151,30 @@ function SearchBar() {
         </div>
       )}
 
-      <div className="search-field">
+      <div className="search-field1">
         <label>Check-in & Check-out</label>
-        <div className="date-picker-container">
-          <div className="check-in-date">
+        <div className="date-picker-container1">
+          <div className="check-in-date1">
             <label>Check-in</label>
             <DatePicker
               selected={checkInDate}
               onChange={handleCheckInDateChange}
               placeholderText="Select Check-in Date"
               dateFormat="yyyy/MM/dd"
-              className="date-input"
+              className="date-input1"
               selectsStart
               startDate={checkInDate}
               endDate={checkOutDate}
             />
           </div>
-          <div className="check-out-date">
+          <div className="check-out-date1">
             <label>Check-out</label>
             <DatePicker
               selected={checkOutDate}
               onChange={handleCheckOutDateChange}
               placeholderText="Select Check-out Date"
               dateFormat="yyyy/MM/dd"
-              className="date-input"
+              className="date-input1"
               selectsEnd
               startDate={checkInDate}
               minDate={checkInDate}
@@ -180,7 +183,7 @@ function SearchBar() {
         </div>
       </div>
 
-      <div className="search-field" onClick={handleRoomsAndGuestsClick}>
+      <div className="search-field1" onClick={handleRoomsAndGuestsClick}>
         <label>Rooms & Guests</label>
         <input
           type="text"
@@ -189,18 +192,18 @@ function SearchBar() {
           readOnly
         />
         {isEditingGuests && (
-          <div ref={guestsDropdownRef} className="rooms-guests-container">
-            <div className="rooms-container">
+          <div ref={guestsDropdownRef} className="rooms-guests-container1">
+            <div className="rooms-container1">
               <span>Rooms: {rooms}</span>
               <button onClick={() => increment(setRooms, rooms)}>+</button>
               <button onClick={() => decrement(setRooms, rooms)}>-</button>
             </div>
-            <div className="adults-container">
+            <div className="adults-container1">
               <span>Adults: {adults}</span>
               <button onClick={() => increment(setAdults, adults)}>+</button>
               <button onClick={() => decrement(setAdults, adults)}>-</button>
             </div>
-            <div className="children-container">
+            <div className="children-container1">
               <span>Children: {children}</span>
               <button onClick={() => increment(setChildren, children)}>+</button>
               <button onClick={() => decrement(setChildren, children)}>-</button>
@@ -210,19 +213,12 @@ function SearchBar() {
       </div>
 
       {/* Existing Button for Larger Screens */}
-      <button className="search-button">
+      <button className="search-button1">
         Check Availability
       </button>
-
-      {/* New Button for Smaller Screens */}
-      <button
-        className="search-button-mobile"
-        onClick={() => window.location.href = '../Check'}
-      >
-        Check Availability
-      </button>
-    </div>
+      </div>
+    </>
   );
 }
 
-export default SearchBar;
+export default Check;

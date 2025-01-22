@@ -28,6 +28,7 @@ import Navbar from '../Components/Navbar';
 import HeroSection from '../Components/HeroSection';
 import SearchBar from '../Components/Searchbar';
 import Main from '../Components/Main';
+import Footer from './Footer';
 
 const Home = () => {
   return (
@@ -36,6 +37,7 @@ const Home = () => {
       <HeroSection />
       <SearchBar />
       <Main />
+      <Footer />
     </div>
   );
 }

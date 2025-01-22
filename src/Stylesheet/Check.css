@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f5eb;
+    margin: 0;
+    padding: 0;
+    color: #6b7a50;
+  }
+  
+  .search-bar1 {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f2f5eb;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-field1 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #869166;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #869166;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #999;
+  }
+  
+  .dropdown-container1 select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #869166;
+    background-color: #f2f5eb;
+    font-size: 16px;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  /* Date Picker */
+  .date-picker-container1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .check-in-date1, .check-out-date1 {
+    width: 48%;
+  }
+  
+  .date-input1 {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #869166;
+    background: transparent;
+    outline: none;
+  }
+  
+  /* Rooms & Guests */
+  .rooms-guests-container1 {
+    background: #fff;
+    border: 1px solid #869166;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .rooms-container1, .adults-container1, .children-container1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .rooms-container1 button,
+  .adults-container1 button,
+  .children-container1 button {
+    background: #869166;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .rooms-container1 span,
+  .adults-container1 span,
+  .children-container1 span {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Button */
+  .search-button1 {
+    width: 100%;
+    padding: 15px;
+    background-color: #869166;
+    border: 2px solid #869166;
+    color: #f2f5eb;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .search-button:hover {
+    background-color: transparent;
+    color: #869166;
+  }
+  
+ 
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .search-bar1 {
+      padding: 10px;
+      max-width: 100px;
+    }
+    
+    .date-picker-container1 {
+      flex-direction: column;
+    }
+    
+    .check-in-date1, .check-out-date1 {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  
+    .search-button1 {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+  

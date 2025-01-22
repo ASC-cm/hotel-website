@@ -1,6 +1,7 @@
 import Navbar from "../Components/Navbar"
 import SearchBar from "../Components/Searchbar";
 import background from '../assets/dinning.webp';
+import Footer from "./Footer";
 import "../Stylesheet/Function.css";
 import "../Stylesheet/Dine.css";
 
@@ -71,6 +72,7 @@ const Dine = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

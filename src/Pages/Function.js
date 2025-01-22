@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from '../Components/Navbar';
+import Footer from "./Footer";
 import background from '../assets/function.webp';
 import SearchBar from '../Components/Searchbar';
 import Map from '../Components/Map';
@@ -215,6 +216,7 @@ function Function() {
         </div>
       </div>
     < Map/>
+    <Footer />
     </div>
   );
 }

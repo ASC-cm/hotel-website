@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from '../Components/Navbar';
 import background from '../assets/rom.webp';
 import SearchBar from '../Components/Searchbar';
+import Footer from "./Footer";
 import "../Stylesheet/Function.css"
 import "../Stylesheet/Room.css"
 
@@ -106,6 +107,7 @@ function Room() {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
     )
 }
