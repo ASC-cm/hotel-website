@@ -1,0 +1,12 @@
+.Story-line h2{
+    margin-top: 15rem;
+    text-align: center;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    color: #4caf50;
+}
+.Story-line p{
+    text-align: center;
+    justify-content: center;
+}

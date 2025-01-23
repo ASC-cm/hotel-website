@@ -15,6 +15,7 @@ import Assessible from './Context/Assessible-room';
 import Dinning from './Pages/Dinning';
 import Dine from './Pages/Dine';
 import Check from "./Pages/Check"
+import Story from './Pages/Story';
 
 import "./App.css"; 
 
@@ -38,6 +39,7 @@ function App() {
         <Route path="/Dine" element={<Dine />} />
         <Route path="/Check" element={<Check />} />
         <Route path="/Footer" element={<Footer />} />
+        <Route path="/Story" element={<Story />} />
       </Routes>
     </Router>
     

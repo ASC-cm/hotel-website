@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Stylesheet/Footer.css"; 
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    };
   return (
     <footer className="footer">
       <div className="footer-signup">
-        <h3>Sign up to Scenic News</h3>
+        <h3>Sign up to Heaven News</h3>
         <form className="signup-form">
           <div className="form-group">
             <input type="text" placeholder="First Name *" />
@@ -37,7 +43,7 @@ const Footer = () => {
           <h4>OUR COLLECTION</h4>
           <ul>
             <li>Heartland Hotels</li>
-            <li>Scenic Hotels</li>
+            <li>Heaven Hotels</li>
             <li>Legacy Collection</li>
             <li>Pet Friendly Hotels</li>
           </ul>
@@ -45,20 +51,38 @@ const Footer = () => {
         <div className="column">
           <h4>FUNCTIONS</h4>
           <ul>
-            <li>Conferences</li>
-            <li>Weddings</li>
-            <li>Special Events</li>
-            <li>Rewards</li>
+            <li>
+            <Link to="/Function" onClick={toggleMenu}>Functions</Link>
+            </li>
+            <li>
+            <Link to="/Function" onClick={toggleMenu}>Weddings</Link>
+            </li>
+            <li>
+            <Link to="/Function" onClick={toggleMenu}>Special Events</Link>
+            </li>
+            <li>
+            <Link to="/Function" onClick={toggleMenu}>Rewards</Link>
+            </li>
           </ul>
         </div>
         <div className="column">
           <h4>OUR STORY</h4>
           <ul>
-            <li>News</li>
-            <li>Your Career</li>
-            <li>Sustainability</li>
-            <li>Home Grown</li>
-            <li>Partnerships</li>
+          <li>
+            <Link to="/Story" onClick={toggleMenu}>News</Link>
+          </li>
+          <li>
+            <Link to="/Story" onClick={toggleMenu}>Your Career</Link>
+          </li>
+          <li>
+            <Link to="/Story" onClick={toggleMenu}>Sustainability</Link>
+          </li>
+          <li>
+            <Link to="/Story" onClick={toggleMenu}>Home Grown</Link>
+          </li>
+          <li>
+            <Link to="/Story" onClick={toggleMenu}>Partnerships</Link>
+          </li>
           </ul>
         </div>
         <div className="column">

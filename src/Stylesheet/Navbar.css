@@ -57,7 +57,7 @@
   position: fixed;
   top: 0;
   left: -100%; /* Hidden by default */
-  width: 97%;
+  width: 25%;
   height: 100%;
   background-color: black;
   color: white;
@@ -107,7 +107,7 @@
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .sidebar {
-    width: 20%; /* Full screen sidebar for smaller devices */
+    width: 25%; /* Full screen sidebar for smaller devices */
   }
 }
   
@@ -161,6 +161,6 @@
 }
 @media (max-width: 768px) {
   .sidebar {
-    width: 95%; /* Full screen sidebar for smaller devices */
+    width: 92%; /* Full screen sidebar for smaller devices */
   }
 }

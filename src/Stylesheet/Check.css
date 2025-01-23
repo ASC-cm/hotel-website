@@ -131,7 +131,8 @@ body {
   @media (max-width: 480px) {
     .search-bar1 {
       padding: 10px;
-      max-width: 100px;
+      max-width: 500px;
+      max-height: 3000px auto;
     }
     
     .date-picker-container1 {

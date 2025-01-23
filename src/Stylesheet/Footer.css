@@ -19,6 +19,13 @@
   gap: 10px;
 }
 
+.form-group-checkbox a {
+  color: chartreuse;
+}
+.form-group-checkbox a:hover{
+  color: green;
+}
+
 input {
   background-color: #fff;
   color: #000;
@@ -66,7 +73,7 @@ button {
 }
 
 .column li:hover {
-  color: blueviolet;
+  color: chartreuse;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -77,8 +84,8 @@ button {
 }
 
 .column a:hover {
-  text-decoration: underline;
-  color: blueviolet;
+  text-decoration: none;
+  color: chartreuse;
 }
 
 .footer-bottom {
@@ -99,7 +106,7 @@ button {
 }
 
 .social-links a:hover {
-  color: blueviolet;
+  color: chartreuse;
   text-decoration: underline;
 }
 
@@ -111,6 +118,14 @@ button {
 .footer-contact {
   text-align: right;
 }
+.footer-contact a{
+  color:  rgb(129, 238, 20);
+  list-style: none;
+  text-decoration: none;
+}
+.footer-contact a:hover{
+  color: green
+}
 
 .copyright {
   margin-top: 10px;
@@ -118,9 +133,32 @@ button {
   font-size: 12px;
 }
 
+.copyright a {
+  color:  rgb(129, 238, 20);
+  list-style: none;
+  text-decoration: none;
+}
+.copyright a:hover{
+  color: green;
+}
+
 /* Responsive Design */
 
 /* Medium screens (tablets and small desktops) */
+@media (max-width: 1024px) {
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 7px;
+  }
+  
+  .column {
+    flex: 1 1 150px;
+    margin: 7px;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-links {
     flex-direction: column;

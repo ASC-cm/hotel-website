@@ -53,7 +53,7 @@ function Navbar() {
             <Link to="/Function" onClick={toggleMenu}>Functions</Link>
           </li>
           <li>
-            <Link to="/our-story" onClick={toggleMenu}>Our Story</Link>
+            <Link to="/Story" onClick={toggleMenu}>Our Story</Link>
           </li>
         </ul>
         <div className="sidebar-footer">
