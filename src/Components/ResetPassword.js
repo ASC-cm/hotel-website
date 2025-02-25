@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Navbar from "./Navbar";
 import "../Stylesheet/ResetPassword.css";
 
 function ResetPassword() {
@@ -37,35 +38,38 @@ function ResetPassword() {
   };
 
   return (
-    <div className="reset-password">
-      <form className="reset-password-form" onSubmit={handleSubmit}>
-        <h2>Reset Password</h2>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="otp"
-          placeholder="OTP"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="password"
-          name="new_password"
-          placeholder="New Password"
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Reset Password</button>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>}
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="reset-password">
+        <form className="reset-password-form" onSubmit={handleSubmit}>
+          <h2>Reset Password</h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="otp"
+            placeholder="OTP"
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="password"
+            name="new_password"
+            placeholder="New Password"
+            onChange={handleChange}
+            required
+          />
+          <button type="submit">Reset Password</button>
+          {error && <p className="error-message">{error}</p>}
+          {success && <p className="success-message">{success}</p>}
+        </form>
+      </div>
+    </>
   );
 }
 

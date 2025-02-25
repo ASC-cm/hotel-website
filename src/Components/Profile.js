@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchProfile, updateProfile } from "../services/api"; 
 import "react-toastify/dist/ReactToastify.css";
 import "../Stylesheet/Profile.css";
+import Navbar from "./Navbar";
 import Spinner from "./Spinner";
 
 
@@ -56,77 +57,82 @@ const Profile = () => {
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
  return (
-   <div className="profile">
-     <h2>Profile</h2>
-     {profile ? (
-       <div>
-         {isEditing ? (
-           <div className="profile-form">
-             <label>
-               First Name:
-               <input
-                 type="text"
-                 name="first_name"
-                 value={formData.first_name || ""}
-                 onChange={handleChange}
-               />
-             </label>
-             <label>
-               Last Name:
-               <input
-                 type="text"
-                 name="last_name"
-                 value={formData.last_name || ""}
-                 onChange={handleChange}
-               />
-             </label>
-             <label>
-               Email:
-               <input
-                 type="email"
-                 name="email"
-                 value={formData.email || ""}
-                 onChange={handleChange}
-               />
-             </label>
-             <label>
-               Gender:
-               <input
-                 type="text"
-                 name="gender"
-                 value={formData.gender || ""}
-                 onChange={handleChange}
-               />
-             </label>
-             <label>
-               Phone Number:
-               <input
-                 type="number"
-                 name="phone_number"
-                 value={formData.phone_number || ""}
-                 onChange={handleChange}
-               />
-             </label>
-             <button className="Save" onClick={handleSave}>Save</button>
-             <button className="cancel" onClick={() => setIsEditing(false)}>
-               Cancel
-             </button>
-           </div>
-         ) : (
-           <div className="profile-details">
-             <p>First Name: {profile.first_name}</p>
-             <p>Last Name: {profile.last_name}</p>
-             <p>Email: {profile.email}</p>
-             <p>Gender: {profile.gender}</p>
-             <p>Phone Number: {profile.phone_number}</p>
-             <button onClick={() => setIsEditing(true)}>Edit Profile</button>
-           </div>
-         )}
-       </div>
-     ) : (
-       <Spinner loading={loading} />
-     )}
-   </div>
+   <>
+     <Navbar />
+     <div className="profile">
+       <h2>Profile</h2>
+       {profile ? (
+         <div>
+           {isEditing ? (
+             <div className="profile-form">
+               <label>
+                 First Name:
+                 <input
+                   type="text"
+                   name="first_name"
+                   value={formData.first_name || ""}
+                   onChange={handleChange}
+                 />
+               </label>
+               <label>
+                 Last Name:
+                 <input
+                   type="text"
+                   name="last_name"
+                   value={formData.last_name || ""}
+                   onChange={handleChange}
+                 />
+               </label>
+               <label>
+                 Email:
+                 <input
+                   type="email"
+                   name="email"
+                   value={formData.email || ""}
+                   onChange={handleChange}
+                 />
+               </label>
+               <label>
+                 Gender:
+                 <input
+                   type="text"
+                   name="gender"
+                   value={formData.gender || ""}
+                   onChange={handleChange}
+                 />
+               </label>
+               <label>
+                 Phone Number:
+                 <input
+                   type="number"
+                   name="phone_number"
+                   value={formData.phone_number || ""}
+                   onChange={handleChange}
+                 />
+               </label>
+               <button className="Save" onClick={handleSave}>
+                 Save
+               </button>
+               <button className="cancel" onClick={() => setIsEditing(false)}>
+                 Cancel
+               </button>
+             </div>
+           ) : (
+             <div className="profile-details">
+               <p>First Name: {profile.first_name}</p>
+               <p>Last Name: {profile.last_name}</p>
+               <p>Email: {profile.email}</p>
+               <p>Gender: {profile.gender}</p>
+               <p>Phone Number: {profile.phone_number}</p>
+               <button onClick={() => setIsEditing(true)}>Edit Profile</button>
+             </div>
+           )}
+         </div>
+       ) : (
+         <Spinner loading={loading} />
+       )}
+     </div>
+   </>
  );
 
 };

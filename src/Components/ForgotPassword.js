@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Navbar from "./Navbar";
 import "../Stylesheet/ForgotPassword.css";
 
 function ForgotPassword() {
@@ -20,19 +21,22 @@ function ForgotPassword() {
   };
 
   return (
-    <form className="forgot-passwordist" onSubmit={handleSubmit}>
-      <h2>Forgot Password</h2>
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <button className="send-otp" type="submit">
-        Send OTP
-      </button>
-    </form>
+    <>
+      <Navbar />
+      <form className="forgot-passwordist" onSubmit={handleSubmit}>
+        <h2>Forgot Password</h2>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <button className="send-otp" type="submit">
+          Send OTP
+        </button>
+      </form>
+    </>
   );
 }
 

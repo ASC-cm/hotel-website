@@ -32,9 +32,9 @@ const Booking = () => {
     const isAuthenticated = localStorage.getItem("userToken"); // Check if user is signed in
 
     if (isAuthenticated) {
-      navigate("/dashboard"); // Redirect to dashboard if signed in
+      navigate("/api/profile"); // Redirect to dashboard if signed in
     } else {
-      navigate("/signin"); // Redirect to sign-in page if not signed in
+      navigate("/api/login"); // Redirect to sign-in page if not signed in
     }
   };
 

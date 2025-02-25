@@ -250,6 +250,38 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+      <style>
+        {`
+          .password-container1 {
+            position: relative;
+            width: 100%;
+          }
+          .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+            color: #888;
+          }
+          .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+            margin-left: 10px;
+          }
+          @keyframes spin {
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        `}
+      </style>
     </>
   );
 };

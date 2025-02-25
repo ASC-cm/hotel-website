@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../Stylesheet/ProfileUpdate.css";
 import { ToastContainer, toast } from "react-toastify";
+import Navbar from "./Navbar";
 import "react-toastify/dist/ReactToastify.css";
 
 function ProfileUpdate() {
@@ -66,57 +67,60 @@ function ProfileUpdate() {
   };
 
   return (
-    <div className="profile-update">
-      <form className="profile-update-form" onSubmit={handleSubmit}>
-        <h2>Profile Update</h2>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="first_name"
-          placeholder="First Name"
-          value={formData.first_name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="last_name"
-          placeholder="Last Name"
-          value={formData.last_name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="gender"
-          placeholder="Gender"
-          value={formData.gender}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="phone_number"
-          placeholder="Phone Number"
-          value={formData.phone_number}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? <span className="spinner"></span> : "Update Profile"}
-        </button>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>}
-      </form>
-      <ToastContainer position="top-right" autoClose={3000} />
-    </div>
+    <>
+      <Navbar />
+      <div className="profile-update">
+        <form className="profile-update-form" onSubmit={handleSubmit}>
+          <h2>Profile Update</h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            value={formData.first_name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="last_name"
+            placeholder="Last Name"
+            value={formData.last_name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="gender"
+            placeholder="Gender"
+            value={formData.gender}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="text"
+            name="phone_number"
+            placeholder="Phone Number"
+            value={formData.phone_number}
+            onChange={handleChange}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? <span className="spinner"></span> : "Update Profile"}
+          </button>
+          {error && <p className="error-message">{error}</p>}
+          {success && <p className="success-message">{success}</p>}
+        </form>
+        <ToastContainer position="top-right" autoClose={3000} />
+      </div>
+    </>
   );
 }
 
