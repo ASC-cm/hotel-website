@@ -7,6 +7,7 @@ import "../Stylesheet/Function.css";
 import "../Stylesheet/Room.css";
 import "../Stylesheet/Family.css";
 import "../Stylesheet/Superior.css";
+import Footer from '../Pages/Footer';
 
 const images = [
     require("../assets/family.webp"),
@@ -104,6 +105,7 @@ const Family = () => {
                 <button className='check-button'>Check Availabilty</button>
             </div>
             <Roomc />
+            <Footer />
         </div>
     );
 };

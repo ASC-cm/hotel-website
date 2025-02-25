@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaBars, FaSearch, FaPhoneAlt, FaTimes } from "react-icons/fa";
+import { FaBars, FaSearch, FaPhoneAlt, FaTimes, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../Stylesheet/Navbar.css";
 
@@ -22,8 +22,15 @@ function Navbar() {
           </div>
         </div>
         <div className="navbar-right">
-          <FaPhoneAlt className="navbar-icon" />
-          <FaSearch className="navbar-icon" />
+          <Link to="/api/login" className="navbar-icon">
+            <FaUser />
+          </Link>
+          <Link to="tel:+2347034418309" className="navbar-icon">
+            <FaPhoneAlt />
+          </Link>
+          <Link to="/Story" className="navbar-icon">
+            <FaSearch />
+          </Link>
         </div>
       </nav>
 

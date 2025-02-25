@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 import '../Stylesheet/SearchBar.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,6 +9,12 @@ const nigerianStates = {
   Lagos: ['Ikeja', 'Victoria Island', 'Badagry'],
   Abuja: ['Abuja Municipal', 'Kuje', 'Bwari'],
   Kano: ['Kano Municipal', 'Tudun Wada', 'Nasarawa'],
+  Rivers: ['Port Harcourt', 'Obio-Akpor', 'Eleme'],
+  Ogun: ['Abeokuta North', 'Ijebu Ode', 'Sagamu'],
+  Abia: ['Aba North','Aba North', 'Arochukwu', 'Bende'],
+  AkwaIbom: ['Abak', 'Uyo', 'Eastern Obolo', 'Eket'],
+  Anambra: ['Aguata', 'Awka North', 'Awka South', 'Anambra East'],
+  CrossRiver: ['Abi', 'Calabar', 'Akamkpa', 'Akpabuyo', 'Bakassi'],
   // Add other states and their local governments here
 };
 
@@ -73,9 +80,6 @@ function SearchBar() {
   const increment = (setter, value) => setter(value + 1);
   const decrement = (setter, value) => setter(value > 0 ? value - 1 : 0);
 
-//   // Toggle editing mode for Rooms & Guests
-//   const toggleEditingGuests = () => setIsEditingGuests(!isEditingGuests);
-
   // Handle check-in date change
   const handleCheckInDateChange = (date) => setCheckInDate(date);
 
@@ -87,15 +91,29 @@ function SearchBar() {
     setIsEditingGuests(!isEditingGuests); // Toggle visibility of rooms & guests editing container
   };
 
+   const navigate = useNavigate();
+
+   const handleClick = () => {
+     navigate("/Booking");
+   };
+  
+
   return (
     <div className="search-bar">
       <div className="search-field">
         <label>Hotel</label>
-        <div className="hotel-input" onClick={() => setIsStateDropdownVisible(true)}>
+        <div
+          className="hotel-input"
+          onClick={() => setIsStateDropdownVisible(true)}
+        >
           <input
             type="text"
             placeholder="Where to?"
-            value={selectedState && selectedLocalGovt ? `${selectedState}, ${selectedLocalGovt}` : 'Select a state and local government'}
+            value={
+              selectedState && selectedLocalGovt
+                ? `${selectedState}, ${selectedLocalGovt}`
+                : "Select a state and local government"
+            }
             readOnly
           />
           {isStateDropdownVisible && (
@@ -121,11 +139,14 @@ function SearchBar() {
       {selectedState && !selectedLocalGovt && (
         <div className="search-field">
           <label>Local Government</label>
-          <div className="local-govt-input" onClick={() => setIsLocalGovtDropdownVisible(true)}>
+          <div
+            className="local-govt-input"
+            onClick={() => setIsLocalGovtDropdownVisible(true)}
+          >
             <input
               type="text"
               placeholder="Select Local Government"
-              value={selectedLocalGovt || 'Select a Local Government'}
+              value={selectedLocalGovt || "Select a Local Government"}
               readOnly
             />
             {isLocalGovtDropdownVisible && (
@@ -185,7 +206,9 @@ function SearchBar() {
         <input
           type="text"
           placeholder="Rooms & Guests"
-          value={`${rooms} room${rooms > 1 ? 's' : ''}, ${adults} adult${adults > 1 ? 's' : ''}, ${children} child${children > 1 ? 'ren' : ''}`}
+          value={`${rooms} room${rooms > 1 ? "s" : ""}, ${adults} adult${
+            adults > 1 ? "s" : ""
+          }, ${children} child${children > 1 ? "ren" : ""}`}
           readOnly
         />
         {isEditingGuests && (
@@ -200,24 +223,28 @@ function SearchBar() {
               <button onClick={() => increment(setAdults, adults)}>+</button>
               <button onClick={() => decrement(setAdults, adults)}>-</button>
             </div>
-            <div className="children-container">
+            <div className="children-container1">
               <span>Children: {children}</span>
-              <button onClick={() => increment(setChildren, children)}>+</button>
-              <button onClick={() => decrement(setChildren, children)}>-</button>
+              <button onClick={() => increment(setChildren, children)}>
+                +
+              </button>
+              <button onClick={() => decrement(setChildren, children)}>
+                -
+              </button>
             </div>
           </div>
         )}
       </div>
 
       {/* Existing Button for Larger Screens */}
-      <button className="search-button">
+      <button className="search-button" onClick={handleClick}>
         Check Availability
       </button>
 
       {/* New Button for Smaller Screens */}
       <button
         className="search-button-mobile"
-        onClick={() => window.location.href = '../Check'}
+        onClick={() => (window.location.href = "../Check")}
       >
         Check Availability
       </button>

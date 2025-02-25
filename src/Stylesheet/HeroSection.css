@@ -1,5 +1,6 @@
 .hero-section {
-  height: 50vh;
+  position: absolute;
+  height: 120vh;
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
@@ -8,6 +9,7 @@
   align-items: center;
   justify-content: center;
   filter: 1; 
+  z-index: 1000;
 }
 
 .hero-overlay {

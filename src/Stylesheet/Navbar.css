@@ -1,4 +1,4 @@
-/* Navbar Styling */
+/* General Navbar Styling */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -20,8 +20,9 @@
   display: flex;
   flex-direction: column;
 }
+
 .navbar-brand1 {
-  color: aquamarine;
+  color: rgb(6, 81, 6);
   margin-left: 1rem;
   text-align: left;
   justify-content: flex-start;
@@ -52,6 +53,30 @@
   cursor: pointer;
 }
 
+/* Hide other icons on smaller screens */
+@media (max-width: 768px) {
+  .navbar-right .navbar-icon {
+    display: none; /* Hide all icons */
+  }
+
+  .navbar-right .navbar-icon:first-child {
+    display: block; /* Show only the first icon (FaUser) */
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center it vertically */
+    right: 1rem; /* Position it to the right */
+    transform: translateY(-50%); /* Adjust its position */
+    z-index: 999; /* Ensure it is clickable */
+  }
+
+  .navbar-brand{
+    display: inline; /* Show only the first icon (FaUser) */
+    position: absolute; /* Position it absolutely */
+    top: 2px; /* Center it vertically */
+    left: 5.5rem; /* Center it horizontally */
+  
+  }
+}
+
 /* Sidebar Styling */
 .sidebar {
   position: fixed;
@@ -59,8 +84,8 @@
   left: -100%; /* Hidden by default */
   width: 25%;
   height: 100%;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   transition: all 0.3s ease-in-out;
   z-index: 2000;
   display: flex;
@@ -83,6 +108,7 @@
 }
 
 .sidebar-menu {
+  color: aliceblue;
   list-style-type: none;
   padding: 0;
   margin: 2rem 0;
@@ -92,6 +118,19 @@
   font-size: 1.2rem;
   margin: 1rem 0;
   cursor: pointer;
+}
+
+/* Style the Link component */
+.sidebar-menu li a {
+  text-decoration: none; /* Removes underline */
+  color: gray; /* Ensures default text color */
+  display: block; /* Ensures full area is clickable */
+  padding: 0.5rem 1rem; /* Optional: Adds padding for better UX */
+}
+
+/* Hover effect */
+.sidebar-menu li a:hover {
+  color: black; /* Change to your preferred hover color */
 }
 
 .sidebar-footer {
@@ -110,17 +149,19 @@
     width: 25%; /* Full screen sidebar for smaller devices */
   }
 }
-  
+
 @media (max-width: 768px) {
   /* Navbar Adjustments */
   .navbar {
     flex-direction: column; /* Stack navbar items vertically */
     align-items: flex-start;
-    
   }
 
   .navbar-right {
-    display: none; /* Hide icons on smaller screens */
+    display: flex; /* Ensure icons are displayed on smaller screens */
+    justify-content: flex-end; /* Align icons to the right */
+    width: 100%; /* Full width for alignment */
+    margin-top: 0; /* Add some margin for spacing */
   }
 
   .navbar-left {
@@ -130,6 +171,10 @@
 
   .navbar-brand {
     margin: 0; /* Remove margin for smaller screens */
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
   }
 
   /* Sidebar Adjustments */
@@ -159,6 +204,7 @@
     width: 100%; /* Full-width button for smaller screens */
   }
 }
+
 @media (max-width: 768px) {
   .sidebar {
     width: 92%; /* Full screen sidebar for smaller devices */

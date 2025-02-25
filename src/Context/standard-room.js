@@ -6,6 +6,7 @@ import Roomc from "../Pages/Roomc";
 import "../Stylesheet/Function.css";
 import "../Stylesheet/Room.css";
 import "../Stylesheet/Superior.css";
+import Footer from '../Pages/Footer';
 
 const images = [
     require("../assets/stand3.webp"),
@@ -100,6 +101,7 @@ const Superior = () => {
                 <button className='check-button'>Check Availabilty</button>
             </div>
             <Roomc />
+            <Footer />
         </div>
     );
 };

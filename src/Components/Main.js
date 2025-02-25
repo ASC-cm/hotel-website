@@ -40,16 +40,12 @@ const Main = () => {
         </p>
         <p>
           Part of this uniquely God Almighty hospitality experience is connecting
-          guests with people, property and place, which includes many of
-          Aotearoa’s most treasured environments and communities. From Northland
-          to the deep south, and into our South Pacific playground, Heaven Hotel
-          Group are located in some of the world’s most unique and picturesque
-          destinations.
-        </p>
-        <p>
-          Whether you are travelling for business or pleasure; solo, family or
-          in a large group; we promise quality, comfort and peace of mind. Heaven
-          Hotel Group... travelling with you.
+          guests with people, property and place, which includes many of Aotearoa’s
+          most treasured environments and communities. From Northland to the deep south,
+          and into our South Pacific playground, Heaven Hotel Group are located in some 
+          of the world’s most unique and picturesque destinations. Whether you are travelling
+          for business or pleasure; solo, family or in a large group; we promise quality, 
+          comfort and peace of mind. Heaven Hotel Group... travelling with you.
         </p>
       </section>
 
@@ -96,7 +92,7 @@ const Main = () => {
           </div>
           <div className="shg-content">
             <h4>Business Traveller Discounts</h4>
-            <h2>SHG Advantage</h2>
+            <h2 className='logo'>SHG Advantage</h2>
             <h3>For Kiwis Who Sleep Away on the Job</h3>
             <p>
               If your job calls for you to travel, whether it be multiple times a week

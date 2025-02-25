@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Footer from "./Footer";
 import "../Stylesheet/Roomc.css";
 
 const rooms = [
@@ -88,7 +87,6 @@ const Roomc = () => {
       <button className="next" onClick={handleNext}>
         &#8594;
       </button>
-      <Footer />
     </div>
   );
 };

@@ -1,0 +1,195 @@
+/* Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* Full Page Layout */
+.signup-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #6a11cb 0%, #38ef7d 100%);
+}
+
+/* Left Section - Animated Text */
+.falling-text1 {
+  flex: 1;
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+}
+
+.falling-text1 h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.falling-text1 p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  opacity: 0.8;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Right Section - Signup Form */
+.upnepa {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.naija-wrapper{
+  width: 100%;
+  max-width: 420px;
+  margin: 0;
+  padding: 30px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Heading */
+.naija-wrapper h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.naija-wrapper p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group1 {
+  display: flex;
+
+}
+
+.input-group1 input,
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Input Focus Effect */
+input:focus,
+select:focus {
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(106, 17, 203, 0.3);
+}
+
+/* Checkbox & Terms Section */
+.checkbox-group1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.checkbox-group1 input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.checkbox-group1 span {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.checkbox-group1 a {
+  color: #6a0dad;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.checkbox-group1 a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Fix for Mobile */
+@media (max-width: 480px) {
+  .checkbox-group1 {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .checkbox-group1 span {
+    font-size: 0.85rem;
+  }
+}
+
+/* Modern Button */
+.bot {
+  width: 100%;
+  padding: 14px;
+  background: #6a11cb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bot:hover {
+  background: #2575fc;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(37, 117, 252, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .signup-parent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .falling-text1 {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .upnepa {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .naija-wrapper {
+    width: 90%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

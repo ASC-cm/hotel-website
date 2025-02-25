@@ -53,7 +53,7 @@ function Room() {
       image:  require("../assets/bu.webp"),
       size: "40m²",
       capacity: "1-5",
-      path: "/one-bedroom-suite",
+      path: "/deluxe",
     },
     {
       title: "Accessible Room",
@@ -62,7 +62,7 @@ function Room() {
       image:  require("../assets/bu.webp"),
       size: "40m²",
       capacity: "1-5",
-      path: "/one-bedroom-suite",
+      path: "/assessible",
     },
   ];
   

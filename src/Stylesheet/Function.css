@@ -1,391 +1,158 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Hero Section */
 .hero-section {
+  position: relative;
   height: 50vh;
   background-size: cover;
   background-position: center;
-  filter: brightness(2);
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-/* Hero Overlay Styling */
 .hero-overlay1 {
-  background-color: rgba(0, 0, 0, 0.4);
-  color: black;
-  text-align: center;
-  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-/* Hero Overlay Heading */
-.hero-overlay h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-/* Hero Overlay Paragraph */
-.hero-overlay p {
-  font-size: 1.2rem;
-}
-
+/* Location Section */
 .location-section1 {
-  margin-top: 3.5rem;
-  margin-bottom: 2rem;
-  padding: 4rem 2rem;
   text-align: center;
-  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  max-width: 100%;
+  margin-top: 7rem;
 }
 
-.location-section1 h2 {
-  font-size: 2rem;
-  color: #4caf50;
-  margin-bottom: 1rem;
-}
-
-.location-section1 p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin: 1rem 0;
-}
-
+/* Function Room Section */
 .function-room-container {
+  max-width: 1100px;
+  margin: 40px auto;
   padding: 20px;
-}
-
-/* Section Titles */
-.section-title {
-  font-size: 24px;
-  margin: 3rem;
-  text-align: center;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .function-room-section {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
-}
-
-h2 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 30px;
-  color: #4caf50;
+  flex-wrap: wrap;
 }
 
 .function-room-image {
-  max-width: 100%;
-  height: auto;
-  flex: 1 1 40%;
-  border-radius: 8px;
-}
-
-.function-room-details {
-  flex: 1 1 55%;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .room-title {
-  font-size: 28px;
-  margin-bottom: 10px;
-  color: #4caf50;
+  font-size: 1.8rem;
+  color: #d9534f;
 }
 
 .room-description {
-  font-size: 16px;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Enquiry Form */
+.enquiry-form-section {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.section-title {
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.room-capacity {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.capacity-item {
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: calc(25% - 20px);  /* 4 items per row by default */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
-  padding: 10px; 
-  border-radius: 5px; 
-}
-
-.capacity-item1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
-  padding: 10px 0; 
-  border-radius: 5px; 
-}
-
-.divider {
-  border: 0;
-  border-top: 2px solid #ccc; 
-  margin: 20px 0;
-}
-
-.capacity-label {
-  font-weight: bold;
-  color: #4caf50;
-}
-
-/* Find Out More Section */
-.find-out-more-section {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.information-link {
-  display: inline-block;
-  margin: 10px 0;
-  text-decoration: none;
-  color: #4caf50;
-}
-
-.quote-button {
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.quote-button:hover {
-  background-color: #0cf114;
-}
-
-.subsection-title1 {
-  text-align: center;
-  color: #4caf50;
-  left: 13rem;
-}
-
-.subsection-title {
-  color: #4caf50;
-}
-
-/* Enquiry Form Section */
-.enquiry-form-section {
-  padding: 20px;
-  text-align: center;
-}
-
-.enquiry-form-section form {
-  max-width: 800px;
-  margin: 0 auto;
+  gap: 15px;
 }
 
 .form-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* Center-align form groups on smaller screens */
+  gap: 10px;
 }
 
-.form-group {
-  flex: 1 1 calc(50% - 20px); /* 2 columns by default */
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-weight: bold;
-  margin-bottom: 5px;
+.form-input, .form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   font-size: 1rem;
 }
 
-.form-input,
-.form-select {
-  width: 90%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* Submit Button */
 .submit-button {
-  background-color: #4caf50;
+  background: #d9534f;
   color: #fff;
-  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  padding: 12px;
   cursor: pointer;
-  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
 .submit-button:hover {
-  background-color: #17ee1e;
+  background: #c9302c;
 }
 
-
-/* Tablets and Smaller Screens */
+/* Responsive Design */
 @media (max-width: 1024px) {
+  .function-room-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
   .function-room-section {
     flex-direction: column;
-  }
-
-  .function-room-image {
-    flex: 1 1 100%;
-  }
-
-  .function-room-details {
-    flex: 1 1 100%;
-  }
-
-  .room-capacity {
-    flex-direction: column;
+    text-align: center;
   }
 
   .form-row {
     flex-direction: column;
   }
-
-  .event-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 20px;
-  }
-
-  .room-title {
-    font-size: 24px;
-  }
-
-  .room-description {
-    font-size: 14px;
-  }
-
-  .quote-button,
-  .submit-button {
-    width: 100%;
-  }
-
-  .information-link {
-    font-size: 14px;
-  }
-
-  .form-group label {
-    font-size: 14px;
-  }
-
-  .form-input,
-  .form-select {
-    padding: 6px;
-  }
-
-  .capacity-item {
-    width: calc(50% - 20px); /* 2 items per row on small screens */
-  }
 }
 
 @media (max-width: 480px) {
-  .section-title {
-    font-size: 18px;
-  }
-
-  .form-group label {
-    font-size: 12px;
-  }
-
-  .form-input,
-  .form-select {
-    padding: 5px;
-  }
-
-  .submit-button {
-    padding: 8px;
-  }
-
-  .capacity-item {
-    width: calc(100% - 20px); /* 1 item per row on very small screens */
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero-section {
-    height: 60vh;
-  }
-
-  .hero-overlay h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-overlay p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section {
-    height: 50vh;
-  }
-
-  .hero-overlay {
-    padding: 1.5rem;
-    align-items: center;
-  }
-
-  .hero-overlay h1 {
-    font-size: 2rem;
-  }
-
-  .hero-overlay p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    height: 40vh;
-  }
-
-  .hero-overlay {
-    padding: 1rem;
-  }
-
-  .hero-overlay h1 {
+  h2 {
     font-size: 1.5rem;
   }
-
-  .hero-overlay p {
+  .function-room-container {
+    padding: 15px;
+  }
+  .form-input, .form-select {
     font-size: 0.9rem;
   }
-}
-
-@media (max-width: 768px) {
-  .capacity-item {
-    width: calc(33.33% - 20px); /* 3 items per row on tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  .capacity-item {
-    width: calc(50% - 20px); /* 2 items per row on small screens */
+  .submit-button {
+    font-size: 1rem;
   }
 }

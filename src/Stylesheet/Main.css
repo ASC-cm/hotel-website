@@ -159,9 +159,11 @@
   color: #5e8b5e;
 }
 
-.shg-content h2 {
+.shg-content .logo {
   font-size: 36px;
-  margin: 5px 0;
+  margin-bottom: 10px;
+  color: black;
+  text-align: left;
 }
 
 .shg-content h3 {
