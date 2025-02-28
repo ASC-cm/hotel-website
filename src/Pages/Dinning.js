@@ -10,17 +10,17 @@ import "../Stylesheet/Dinning.css"
 const restaurants = [
     {
       name: "Nikau Restaurant & Bar",
-      location: "Paihia",
+      location: "Nepa line",
       image: require("../assets/re1.webp"),
     },
     {
-      name: "Trocadero Restaurant & Bar",
-      location: "Auckland CBD",
+      name: "Trocad Restaurant & Bar",
+      location: "Abak road",
       image: require("../assets/re2.webp"),
     },
     {
       name: "Runway Restaurant & Bar",
-      location: "Auckland Airport",
+      location: "Uyo Airport Road",
       image: require("../assets/re3.webp"),
     },
   ];

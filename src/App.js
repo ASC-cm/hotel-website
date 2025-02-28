@@ -11,6 +11,7 @@ import Offer from "./Pages/Offer";
 import Room from "./Pages/Room";
 import Roomc from "./Pages/Roomc";
 import Function from "./Pages/Function";
+import Contact from "./Pages/Contact";
 import Family from "./Context/family-room";
 import Standard from "./Context/standard-room";
 import Superior from "./Context/superior-room";
@@ -23,6 +24,7 @@ import Dine from "./Pages/Dine";
 import Check from "./Pages/Check";
 import Story from "./Pages/Story";
 import Profile from "./Components/Profile";
+import BookingForm from "./Components/BookingForm";
 import SignUp from "./Components/SignUp";
 import ProfileUpdate from "./Components/ProfileUpdate";
 import ForgotPassword from "./Components/ForgotPassword";
@@ -33,6 +35,20 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
+ const [auth, setAuth] = useState(!!localStorage.getItem("token"));
+
+  useEffect(() => {
+    const checkAuth = () => {
+      setAuth(!!localStorage.getItem("token"));
+    };
+
+    checkAuth();
+    window.addEventListener("storage", checkAuth);
+
+    return () => {
+      window.removeEventListener("storage", checkAuth);
+    };
+  }, []);
 
   return (
     <Router>
@@ -49,16 +65,21 @@ function App() {
         <Route path="/function" element={<Function />} />
         <Route path="/room" element={<Room />} />
         <Route path="/roomc" element={<Roomc />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/BookingForm" element={<BookingForm />} />
         <Route path="/dinning" element={<Dinning />} />
         <Route path="/dine" element={<Dine />} />
         <Route path="/check" element={<Check />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/story" element={<Story />} />
         <Route path="/api/signup" element={<SignUp />} />
-        <Route path="/api/login" element={<Login />} />
+        <Route
+          path="/api/profile"
+          element={auth ? <Profile /> : <Navigate to="/api/login" />}
+        />
+        <Route path="/api/login" element={<Login setAuth={setAuth} />} />
         <Route path="/api/forgot-password" element={<ForgotPassword />} />
         <Route path="/api/reset-password" element={<ResetPassword />} />
-        <Route path="/api/profile" element={<Profile />} />
         <Route path="/api/profile-update" element={<ProfileUpdate />} />
       </Routes>
       <ToastContainer />

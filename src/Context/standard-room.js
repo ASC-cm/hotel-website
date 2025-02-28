@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import background from '../assets/standard.webp';
 import SearchBar from '../Components/Searchbar';
@@ -17,6 +18,7 @@ const images = [
 
 const Superior = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -51,58 +53,80 @@ const Superior = () => {
         },
     ];
 
+    const handleCheckAvailabilityClick = () => {
+      navigate("/Booking"); // Replace with your desired route
+    };
+
+
     return (
-        <div>
-            <Navbar />
-            <div className="hero-section" style={{ backgroundImage: `url(${background})` }}>
-                <div className="hero-overlay1" />
-            </div>
-            <SearchBar />
-            <div className="details-container">
-                <h2>Standard Queen, King or King & Queen Room</h2>
-                <hr />
-                <p>
-                Standard rooms all include air conditioning, TV with Sky channels, private balcony 
-                or patio, mini fridge, tea and coffee making facilities and free WiFi. The en-suite 
-                bathroom comes with a hairdryer and complimentary toiletries.
-                </p>
-                <div className="slider-container">
-                    <button className="arrow left-arrow" onClick={prevImage}>
-                        &#8592;
-                    </button>
-                    <div className="slider" style={{ display: 'flex', transform: `translateX(-${currentIndex * 100}%)`, transition: 'transform 0.5s ease-in-out' }}>
-                        {images.map((image, index) => (
-                            <img
-                                key={index}
-                                src={image}
-                                alt={`Slide ${index + 1}`}
-                                style={{ minWidth: '100%' }}
-                            />
-                        ))}
-                    </div>
-                    <button className="arrow right-arrow" onClick={nextImage}>
-                        &#8594;
-                    </button>
-                </div>
-                <div className="features-container">
-                    {features.map((feature, index) => (
-                        <div className="feature-row" key={index}>
-                            <span>{feature.name}</span>
-                            <img src={feature.icon} alt={feature.name} />
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className='let-check'>
-                <h1>How to book a Standard Room</h1>
-                <h4>Standard rooms are located close to the pool and other hotel facilities. 
-                    Choose from a King, Queen or King & Queen bed room option.
-                </h4>
-                <button className='check-button'>Check Availabilty</button>
-            </div>
-            <Roomc />
-            <Footer />
+      <div>
+        <Navbar />
+        <div
+          className="hero-section"
+          style={{ backgroundImage: `url(${background})` }}
+        >
+          <div className="hero-overlay1" />
         </div>
+        <SearchBar />
+        <div className="details-container">
+          <h2>Standard Queen, King or King & Queen Room</h2>
+          <hr />
+          <p>
+            Standard rooms all include air conditioning, TV with Sky channels,
+            private balcony or patio, mini fridge, tea and coffee making
+            facilities and free WiFi. The en-suite bathroom comes with a
+            hairdryer and complimentary toiletries.
+          </p>
+          <div className="slider-container">
+            <button className="arrow left-arrow" onClick={prevImage}>
+              &#8592;
+            </button>
+            <div
+              className="slider"
+              style={{
+                display: "flex",
+                transform: `translateX(-${currentIndex * 100}%)`,
+                transition: "transform 0.5s ease-in-out",
+              }}
+            >
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Slide ${index + 1}`}
+                  style={{ minWidth: "100%" }}
+                />
+              ))}
+            </div>
+            <button className="arrow right-arrow" onClick={nextImage}>
+              &#8594;
+            </button>
+          </div>
+          <div className="features-container">
+            {features.map((feature, index) => (
+              <div className="feature-row" key={index}>
+                <span>{feature.name}</span>
+                <img src={feature.icon} alt={feature.name} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="let-check">
+          <h1>How to book a Standard Room</h1>
+          <h4>
+            Standard rooms are located close to the pool and other hotel
+            facilities. Choose from a King, Queen or King & Queen bed room
+            option.
+          </h4>
+          <button
+            className="check-button"
+            onClick={handleCheckAvailabilityClick}>
+            Check Availabilty
+          </button>
+        </div>
+        <Roomc />
+        <Footer />
+      </div>
     );
 };
 

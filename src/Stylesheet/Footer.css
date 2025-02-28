@@ -30,25 +30,25 @@
 }
 
 .form-group-checkbox label {
-  color: #FFD700; /* Gold for a premium look */
+  color: white; /* Gold for a premium look */
   font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
 .form-group-checkbox label:hover {
-  color: #FFEB3B; /* Brighter yellow on hover */
+  color: whitesmoke; /* Brighter yellow on hover */
 }
 
 /* Different Color for Links */
 .form-group-checkbox a {
-  color: #00BFFF; /* Deep Sky Blue for contrast */
+  color: rgb(106, 180, 32); /* Deep Sky Blue for contrast */
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .form-group-checkbox a:hover {
-  color: #1E90FF; /* Dodger Blue on hover */
+  color: rgb(131, 249, 13); /* Dodger Blue on hover */
   text-decoration: underline;
 }
 

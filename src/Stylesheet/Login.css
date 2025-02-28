@@ -185,27 +185,25 @@ input {
 }
 
 @media (max-width: 768px) {
-  .login-info1 h1 {
-    font-size: 2rem;
-  }
-
-  .login-info1 p {
-    font-size: 1rem;
+  .login-info1  {
+    display: none;
   }
 
   .form-wrapper1 {
     width: 90%;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
-  .login-info1 h1 {
-    font-size: 1.8rem;
+  .login-info1  {
+    display: none;
+  }
+  .form-wrapper1 {
+    width: 90%;
+    margin: 0 auto;
   }
 
-  .login-info1 p {
-    font-size: 0.9rem;
-  }
 }
 
 /* Animations */

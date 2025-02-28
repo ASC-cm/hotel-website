@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../Stylesheet/Check.css";
 import DatePicker from "react-datepicker";
 import Navbar from "../Components/Navbar";
@@ -103,32 +103,11 @@ function Check() {
   };
 
   // Handle search button click
-  const handleSearch = async () => {
-    if (!selectedState || !selectedLocalGovt || !checkInDate || !checkOutDate) {
-      alert("Please fill in all required fields.");
-      return;
-    }
+   const navigate = useNavigate();
 
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/api/check-availability",
-        {
-          state: selectedState,
-          localGovernment: selectedLocalGovt,
-          checkInDate,
-          checkOutDate,
-          rooms,
-          adults,
-          children,
-        }
-      );
-
-      console.log("Search results:", response.data);
-    } catch (error) {
-      console.error("Error fetching search results:", error);
-      alert("Something went wrong. Please try again.");
-    }
-  };
+   const handleClick = () => {
+     navigate("/Booking");
+   };
 
   return (
     <>
@@ -271,7 +250,7 @@ function Check() {
         </div>
 
         {/* Existing Button for Larger Screens */}
-        <button className="search-button1" onClick={handleSearch}>
+        <button className="search-button1" onClick={handleClick}>
           Check Availability
         </button>
       </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import background from '../assets/family.webp';
 import SearchBar from '../Components/Searchbar';
@@ -17,6 +18,7 @@ const images = [
 
 const Superior = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -50,6 +52,11 @@ const Superior = () => {
             icon: require("../assets/icons/tv.png")
         },
     ];
+
+    const handleCheckAvailabilityClick = () => {
+      navigate("/Booking"); // Replace with your desired route
+    };
+
 
     return (
       <div>
@@ -113,7 +120,11 @@ const Superior = () => {
             arrange with the hotel prior to arrival to ensure we’re able to
             arrange).
           </h4>
-          <button className="check-button">Check Availabilty</button>
+          <button
+            className="check-button"
+            onClick={handleCheckAvailabilityClick}>
+            Check Availabilty
+          </button>
         </div>
         <Roomc />
         <Footer />

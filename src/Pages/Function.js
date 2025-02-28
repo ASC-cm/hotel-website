@@ -75,7 +75,7 @@ function Function() {
       </div>
       <SearchBar />
       <section className="location-section1">
-        <h2>Auckland Conference Room & Event Facilities</h2>
+        <h2>Heaven Conference Room & Event Facilities</h2>
         <img
           src={require("../assets/line2.png")}
           alt="design"
@@ -83,7 +83,7 @@ function Function() {
           height={50}
         />
         <p>
-          Heartland Hotel Auckland Airport is located in the Airpark Business
+          Heavens Hotel Group Airport is located in the Airpark Business
           Centre...
         </p>
       </section>

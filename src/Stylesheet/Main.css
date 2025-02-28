@@ -150,6 +150,9 @@
 .shg-content {
   flex: 2;
   color: #52674c; /* Greenish text color */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .shg-content h4 {
@@ -163,7 +166,9 @@
   font-size: 36px;
   margin-bottom: 10px;
   color: black;
-  text-align: left;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .shg-content h3 {
@@ -203,6 +208,8 @@
 
   .shg-content {
     padding: 20px; /* Add padding to content for spacing */
+    justify-content: center;
+    text-align: center;
   }
   .hotels-container {
     margin-top: 2rem; /* Reduced margin for smaller screens */
@@ -266,6 +273,9 @@
 
   .shg-content {
     padding: 20px; /* Add padding to content for spacing */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   .hotels-container {
     margin-top: 2rem;

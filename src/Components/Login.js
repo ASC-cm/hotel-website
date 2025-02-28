@@ -3,7 +3,7 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import Spinner from "./Spinner";
 import Navbar from "./Navbar";
@@ -26,12 +26,13 @@ const slides = [
   },
 ];
 
-const Login = () => {
+const Login = ({ setAuth }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -55,14 +56,13 @@ const Login = () => {
       );
 
       localStorage.setItem("authToken", response.data.access);
+      setAuth(true);
       toast.success("Login successful! Redirecting...", {
         position: "top-right",
         autoClose: 2000,
       });
 
-      setTimeout(() => {
-        window.location.href = "/api/profile";
-      }, 2000);
+       navigate("/api/profile");
     } catch (error) {
       toast.error("Login failed: Invalid credentials", {
         position: "top-right",

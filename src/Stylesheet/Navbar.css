@@ -207,6 +207,6 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 92%; /* Full screen sidebar for smaller devices */
+    width: 99%; /* Full screen sidebar for smaller devices */
   }
 }

@@ -138,6 +138,10 @@ select:focus {
   .checkbox-group1 span {
     font-size: 0.85rem;
   }
+   .falling-text1 {
+    display: none;
+  }
+
 }
 
 /* Modern Button */
@@ -168,17 +172,17 @@ select:focus {
   }
 
   .falling-text1 {
-    width: 100%;
-    padding: 20px;
+    display: none;
   }
 
   .upnepa {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0;
   }
 
   .naija-wrapper {
     width: 90%;
+    margin: 0 auto;
   }
 }
 
