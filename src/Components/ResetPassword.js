@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import axios from "axios";
 import Navbar from "./Navbar";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../Stylesheet/ResetPassword.css";
 
 function ResetPassword() {
@@ -9,8 +12,8 @@ function ResetPassword() {
     otp: "",
     new_password: "",
   });
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
+
+  const navigate = useNavigate(); // ✅ Initialize navigate function
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,15 +28,18 @@ function ResetPassword() {
         formData
       );
 
-      console.log("Reset Password Response:", response.data); // ✅ Log response to avoid ESLint warning
+      console.log("Reset Password Response:", response.data);
 
-      setSuccess(response.data.message || "Password reset successful.");
-      setError("");
+      toast.success(response.data.message || "Password reset successful.");
+
+      // ✅ Redirect to login page after 3 seconds
+      setTimeout(() => {
+        navigate("/api/login");
+      }, 3000);
     } catch (error) {
       const errorMessage =
         error.response?.data?.non_field_errors?.[0] || "An error occurred.";
-      setError(errorMessage);
-      setSuccess("");
+      toast.error(errorMessage);
     }
   };
 
@@ -65,10 +71,9 @@ function ResetPassword() {
             required
           />
           <button type="submit">Reset Password</button>
-          {error && <p className="error-message">{error}</p>}
-          {success && <p className="success-message">{success}</p>}
         </form>
       </div>
+      <ToastContainer />
     </>
   );
 }

@@ -13,8 +13,6 @@ function ProfileUpdate() {
     phone_number: "",
   });
 
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false); // Spinner state
 
   const handleChange = (e) => {
@@ -24,13 +22,10 @@ function ProfileUpdate() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true); // Show spinner
-    setError("");
-    setSuccess("");
 
     const token = localStorage.getItem("authToken");
 
     if (!token) {
-      setError("No token found. Please log in.");
       toast.error("No token found. Please log in.");
       setLoading(false);
       return;
@@ -51,15 +46,12 @@ function ProfileUpdate() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        setError(errorData.detail || "An error occurred.");
         toast.error(errorData.detail || "An error occurred.");
       } else {
-        setSuccess("Profile updated successfully.");
         toast.success("Profile updated successfully.");
       }
     } catch (error) {
       console.error("Error updating profile:", error);
-      setError("An error occurred while updating the profile.");
       toast.error("An error occurred while updating the profile.");
     }
 
@@ -115,8 +107,6 @@ function ProfileUpdate() {
           <button type="submit" disabled={loading}>
             {loading ? <span className="spinner"></span> : "Update Profile"}
           </button>
-          {error && <p className="error-message">{error}</p>}
-          {success && <p className="success-message">{success}</p>}
         </form>
         <ToastContainer position="top-right" autoClose={3000} />
       </div>

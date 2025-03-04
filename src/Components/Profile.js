@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchProfile, updateProfile } from "../services/api";
+import { fetchProfile, updateProfile, refreshAuthToken } from "../services/api";
 import "react-toastify/dist/ReactToastify.css";
 import "../Stylesheet/Profile.css";
 import Navbar from "./Navbar";
@@ -16,20 +16,43 @@ const Profile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const getProfile = async () => {
-      try {
-        const token = localStorage.getItem("authToken");
-        if (!token) {
-          setError("No token found. Please log in.");
-          return;
-        }
+    const handleTokenRefresh = async () => {
+      const newToken = await refreshAuthToken(); // Call refresh function
+      if (newToken) {
+        localStorage.setItem("authToken", newToken);
+        return true;
+      }
+      return false;
+    };
 
-        const data = await fetchProfile();
+    const getProfile = async () => {
+      let token = localStorage.getItem("authToken");
+      if (!token) {
+        setError("No token found. Please log in.");
+        setLoading(false);
+        return;
+      }
+
+      try {
+        let data = await fetchProfile();
+        if (!data) {
+          throw new Error("Unauthorized");
+        }
         setProfile(data);
         setFormData(data);
       } catch (error) {
-        setError("Failed to load profile. Try logging in again.");
+        if (error.message === "Unauthorized") {
+          const refreshed = await handleTokenRefresh();
+          if (refreshed) {
+            getProfile(); // Retry fetching profile after refreshing token
+          } else {
+            setError("Session expired. Please log in again.");
+          }
+        } else {
+          setError("Failed to load profile. Try logging in again.");
+        }
         console.error("Error fetching profile:", error.message);
+      } finally {
         setLoading(false);
       }
     };
@@ -56,6 +79,7 @@ const Profile = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("refreshToken");
     navigate("/api/login");
   };
 
@@ -63,6 +87,7 @@ const Profile = () => {
     navigate("/BookingForm");
   };
 
+  if (loading) return <p>Loading profile...</p>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
@@ -152,36 +177,35 @@ const Profile = () => {
         )}
       </div>
 
-      <style>
-        {`
-          .profile-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-          }
+      {/* Fixing inline style issue */}
+      <style>{`
+        .profile-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+        }
 
-          .profile-title {
-            margin-left: 10px;
-            font-size: 24px;
-            font-weight: bold;
-          }
+        .profile-title {
+          margin-left: 10px;
+          font-size: 24px;
+          font-weight: bold;
+        }
 
-          .bundle {
-            background-color: rgb(15, 247, 50);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s ease;
-          }
-          .bundle:hover {
-            background-color:green;
-          }
-        `}
-      </style>
+        .bundle {
+          background-color: rgb(15, 247, 50);
+          color: white;
+          border: none;
+          padding: 10px 15px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background 0.3s ease;
+        }
+        .bundle:hover {
+          background-color: green;
+        }
+      `}</style>
     </>
   );
 };

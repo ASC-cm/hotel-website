@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { FaBars, FaSearch, FaPhoneAlt, FaTimes, FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { FaBars, FaSearch, FaPhoneAlt, FaTimes, FaUser, FaUserCircle } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 import "../Stylesheet/Navbar.css";
 
 function Navbar() {
@@ -9,6 +9,26 @@ function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+   const navigate = useNavigate(); // Replace useHistory with useNavigate
+
+   useEffect(() => {
+     const authToken = localStorage.getItem("authToken"); // Changed to match snippet 1's token name
+     if (authToken) {
+       setIsLoggedIn(true);
+     } else {
+       setIsLoggedIn(false);
+     }
+   }, []);
+
+   const handleIconClick = () => {
+     if (isLoggedIn) {
+       navigate("/api/profile"); // Changed to match snippet 1's navigation path
+     } else {
+       navigate("/api/login");
+     }
+   };
 
   return (
     <>
@@ -22,9 +42,9 @@ function Navbar() {
           </div>
         </div>
         <div className="navbar-right">
-          <Link to="/api/login" className="navbar-icon">
-            <FaUser />
-          </Link>
+          <div onClick={handleIconClick} className="navbar-icon">
+            {isLoggedIn ? <FaUserCircle size={32} /> : <FaUser size={32} />}
+          </div>
           <Link to="tel:+2347034418309" className="navbar-icon">
             <FaPhoneAlt />
           </Link>
@@ -45,22 +65,34 @@ function Navbar() {
         </div>
         <ul className="sidebar-menu">
           <li>
-            <Link to="/" onClick={toggleMenu}>Hotels</Link>
+            <Link to="/" onClick={toggleMenu}>
+              Hotels
+            </Link>
           </li>
           <li>
-            <Link to="/Room" onClick={toggleMenu}>Rooms</Link>
+            <Link to="/Room" onClick={toggleMenu}>
+              Rooms
+            </Link>
           </li>
           <li>
-            <Link to="/Offer" onClick={toggleMenu}>Offers</Link>
+            <Link to="/Offer" onClick={toggleMenu}>
+              Offers
+            </Link>
           </li>
           <li>
-            <Link to="/Dinning" onClick={toggleMenu}>Dining</Link>
+            <Link to="/Dinning" onClick={toggleMenu}>
+              Dining
+            </Link>
           </li>
           <li>
-            <Link to="/Function" onClick={toggleMenu}>Functions</Link>
+            <Link to="/Function" onClick={toggleMenu}>
+              Functions
+            </Link>
           </li>
           <li>
-            <Link to="/Story" onClick={toggleMenu}>Our Story</Link>
+            <Link to="/Story" onClick={toggleMenu}>
+              Our Story
+            </Link>
           </li>
         </ul>
         <div className="sidebar-footer">

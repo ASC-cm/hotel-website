@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import "../Stylesheet/BookingPage.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -18,23 +18,27 @@ import monthImg from "../assets/bu.webp";
 import sixmonthImg from "../assets/ass2.webp";
 
 const Booking = () => {
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("accommodations");
   const [subSection, setSubSection] = useState("rooms");
   const [dateRange, setDateRange] = useState([null, null]);
   const [startDate, endDate] = dateRange;
   const [selectedRooms, setSelectedRooms] = useState([]);
   const [selectedDeal, setSelectedDeal] = useState(null);
-  
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Check if the user is logged in
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setIsAuthenticated(!!token); // Convert token presence to boolean
+  }, []);
 
   // Function to handle Sign In & Book button click
   const handleBookNow = () => {
-    const isAuthenticated = localStorage.getItem("userToken"); // Check if user is signed in
-
     if (isAuthenticated) {
-      navigate("/api/profile"); // Redirect to dashboard if signed in
+      navigate("/api/profile"); // Redirect to profile if signed in
     } else {
-      navigate("/api/login"); // Redirect to sign-in page if not signed in
+      navigate("/api/login"); // Redirect to login if not signed in
     }
   };
 
@@ -42,7 +46,7 @@ const Booking = () => {
     { name: "Deluxe Room", price: 224, img: deluxeImg },
     { name: "Family Room", price: 249, img: familyImg },
     { name: "Standard Room", price: 199, img: standardImg },
-    { name: "Superior Room", price: 275, img: superiorImg }, // Fixed typo
+    { name: "Superior Room", price: 275, img: superiorImg },
     { name: "One-Bedroom Suite", price: 299, img: suiteImg },
   ];
 
@@ -54,16 +58,13 @@ const Booking = () => {
     { name: "6-Month Stay & Park", price: 9999, nights: 180, img: sixmonthImg },
   ];
 
-
   // Handle room selection
   const handleRoomSelection = (room) => {
     setSelectedRooms((prev) => {
       const alreadySelected = prev.find((r) => r.name === room.name);
-      if (alreadySelected) {
-        return prev.filter((r) => r.name !== room.name);
-      } else {
-        return [...prev, room];
-      }
+      return alreadySelected
+        ? prev.filter((r) => r.name !== room.name)
+        : [...prev, room];
     });
   };
 
@@ -84,7 +85,7 @@ const Booking = () => {
           <div className="date-picker-container">
             <label>Select Check-in and Check-out Dates:</label>
             <DatePicker
-              selectsRange={true}
+              selectsRange
               startDate={startDate}
               endDate={endDate}
               onChange={(update) => setDateRange(update)}
@@ -188,7 +189,7 @@ const Booking = () => {
 
         <div className="booking-footer">
           <button className="book-now" onClick={handleBookNow}>
-            SIGN IN AND BOOK
+            {isAuthenticated ? "PROCEED TO PROFILE" : "SIGN IN AND BOOK"}
           </button>
         </div>
       </div>

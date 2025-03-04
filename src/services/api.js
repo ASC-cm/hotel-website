@@ -54,61 +54,89 @@ export const resetPassword = async (otp, newPassword) => {
   }
 };
 
-// Function to handle profile update
-export const updateProfile = async (profileData) => {
-  const token = localStorage.getItem("authToken");
-  if (!token) {
-    throw new Error("No token found");
+// Function to refresh the authentication token
+export const refreshAuthToken = async () => {
+  const refreshToken = localStorage.getItem("refreshToken");
+
+  if (!refreshToken) {
+    console.warn("No refresh token found. User needs to log in again.");
+    localStorage.removeItem("authToken");
+    return null;
   }
 
   try {
-    const response = await axios.put(
-      `${API_BASE_URL}/profile-update/`,
-      profileData,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    return response.data;
-  } catch (error) {
-    console.error(
-      "Error updating profile:",
-      error.response ? error.response.data : error.message
-    );
-    throw error;
-  }
-};
-
-export const fetchProfile = async () => {
-  const token = localStorage.getItem("authToken"); // Retrieve the token from local storage
-  if (!token) {
-    throw new Error("No authentication token found");
-  }
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/profile/`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
-        "Content-Type": "application/json", // Optional: Set Content-Type if needed
-      },
+    const response = await axios.post(`${API_BASE_URL}/token/refresh/`, {
+      refresh: refreshToken,
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch profile");
-    }
-
-    const data = await response.json();
-    return data;
+    const newAccessToken = response.data.access;
+    localStorage.setItem("authToken", newAccessToken); // Update token in storage
+    return newAccessToken;
   } catch (error) {
-    console.error("Error:", error);
-    throw error;
+    console.error("Error refreshing token:", error.response?.data || error.message);
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("refreshToken"); // Clear both tokens
+    return null;
   }
 };
 
+// Function to fetch user profile
+export const fetchProfile = async () => {
+  let token = localStorage.getItem("authToken");
+
+  if (!token) {
+    console.warn("No authentication token found, skipping profile fetch.");
+    return null;
+  }
+
+  try {
+    const response = await axios.get(`${API_BASE_URL}/profile/`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 401) {
+      console.warn("Token expired. Attempting to refresh...");
+      token = await refreshAuthToken();
+      if (token) {
+        return fetchProfile(); // Retry with new token
+      }
+    }
+
+    console.error("Error fetching profile:", error.response?.data || error.message);
+    return null;
+  }
+};
+
+// Function to update user profile
+export const updateProfile = async (profileData) => {
+  let token = localStorage.getItem("authToken");
+
+  if (!token) {
+    console.warn("No authentication token found, skipping profile update.");
+    return null;
+  }
+
+  try {
+    const response = await axios.put(`${API_BASE_URL}/profile-update/`, profileData, {
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    });
+
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 401) {
+      console.warn("Token expired. Attempting to refresh...");
+      token = await refreshAuthToken();
+      if (token) {
+        return updateProfile(profileData); // Retry with new token
+      }
+    }
+
+    console.error("Error updating profile:", error.response?.data || error.message);
+    return null;
+  }
+};
 // export const fetchProfile = async () => {
 //     const token = localStorage.getItem('authToken'); // Ensure token key is consistent
 //     if (!token) {
